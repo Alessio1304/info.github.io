@@ -26,8 +26,11 @@ const Header = () => {
   const downloadCV = () => {
     // Create a link element
     const link = document.createElement('a');
-    // Set link properties for CV file (must be in the public folder for GitHub Pages)
-    link.href = './CV_Alessio_Sorrentino.pdf';
+    // Set link properties for CV file with the correct base path for GitHub Pages
+    const basePath = import.meta.env.BASE_URL || '/';
+    // Ensure we have a clean base path that doesn't end with a slash if we're adding one
+    const cleanBasePath = basePath.endsWith('/') ? basePath.slice(0, -1) : basePath;
+    link.href = `${cleanBasePath}/CV_Alessio_Sorrentino.pdf`;
     link.download = 'CV_Alessio_Sorrentino.pdf';
     // Append to the document
     document.body.appendChild(link);
