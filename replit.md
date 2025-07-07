@@ -1,0 +1,59 @@
+# Portfolio Alessio Sorrentino - Replit Project Documentation
+
+## Project Overview
+Repository per il sito personale di Alessio Sorrentino contenente curriculum, blog e informazioni di contatto, ottimizzato per il deployment su GitHub Pages.
+
+**Target URL:** https://alessio1304.github.io/info.github.io/
+
+## User Preferences
+- **Language:** Italiano e Inglese
+- **Communication:** Risposte concise e tecniche quando necessario
+- **Deployment:** GitHub Pages con percorso base `/info.github.io/`
+
+## Project Architecture
+- **Frontend:** React + TypeScript + Vite
+- **Styling:** Tailwind CSS + shadcn/ui components
+- **Routing:** Wouter con hash-based routing per GitHub Pages
+- **Build System:** Vite per la build del client
+- **Deployment:** GitHub Actions workflow per deploy automatico
+
+### Key Technical Decisions
+- **Hash-based routing:** Implementato `useHashLocation` hook per compatibilità con GitHub Pages
+- **Base path:** Configurato `/info.github.io/` come percorso base
+- **Static files:** File ottimizzati per deployment diretto senza server backend
+
+## Recent Changes
+
+### 2024-04-14 - Configurazione completa per GitHub Pages
+- ✅ Aggiornato percorso base da `/info/` a `/info.github.io/`
+- ✅ Modificato `client/src/main.tsx` per utilizzare il nuovo percorso base
+- ✅ Aggiornato `client/index.html` con URL corretto nelle meta property
+- ✅ Configurato GitHub Actions workflow per build e deploy automatico
+- ✅ Creato cartella `github-pages-final/` con file ottimizzati per deploy
+- ✅ Aggiornati percorsi delle risorse da assoluti a relativi per funzionamento corretto
+- ✅ Creato file `.nojekyll` per evitare processing Jekyll
+- ✅ Implementato `404.html` per gestione SPA routing
+
+### File Structure for GitHub Pages
+```
+github-pages-final/
+├── index.html          # File principale con percorsi relativi
+├── 404.html           # Gestione routing per SPA
+├── .nojekyll          # Disabilita Jekyll processing
+├── README.md          # Istruzioni per deploy
+└── assets/
+    ├── index-[hash].js   # JavaScript bundle
+    └── index-[hash].css  # CSS styles
+```
+
+## Deploy Instructions
+1. Copiare tutti i file da `github-pages-final/` nel repository `info.github.io`
+2. Fare push su GitHub
+3. Abilitare GitHub Pages nelle impostazioni del repository
+4. Il sito sarà disponibile su https://alessio1304.github.io/info.github.io/
+
+## Development Notes
+- Il progetto è configurato per funzionare sia in sviluppo locale che in produzione su GitHub Pages
+- I percorsi sono gestiti automaticamente tramite la variabile `BASE_URL`
+- Il routing utilizza hash (#) per compatibilità con GitHub Pages
+- Non è necessario un server backend per il funzionamento in produzione
