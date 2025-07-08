@@ -7,6 +7,21 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const headerOffset = 80; // Offset per l'header fisso
+      const elementPosition = element.offsetTop;
+      const offsetPosition = elementPosition - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+    setIsMobileMenuOpen(false);
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -82,30 +97,24 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            <a
-              href="#about"
+            <button
+              onClick={() => scrollToSection("about")}
               className="text-sm font-medium hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full"
             >
               Chi Sono
-            </a>
-            <a
-              href="#blog"
-              className="text-sm font-medium hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full"
-            >
-              Blog
-            </a>
-            <a
-              href="#resume"
+            </button>
+            <button
+              onClick={() => scrollToSection("resume")}
               className="text-sm font-medium hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full"
             >
               Curriculum
-            </a>
-            <a
-              href="#contact"
+            </button>
+            <button
+              onClick={() => scrollToSection("contact")}
               className="text-sm font-medium hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full"
             >
               Contatti
-            </a>
+            </button>
             <Button onClick={downloadCV} size="sm" className="gap-2 shadow-sm transition-transform duration-300 hover:shadow-md hover:translate-y-[-2px]">
               <FileDown className="h-4 w-4" /> CV
             </Button>
@@ -162,34 +171,24 @@ const Header = () => {
             <div className="border-t py-6 px-4">
               <div className="container mx-auto">
                 <nav className="flex flex-col gap-4">
-                  <a
-                    href="#about"
-                    className="text-sm font-medium py-3 hover:text-primary hover:pl-2 transition-all"
-                    onClick={() => setIsMobileMenuOpen(false)}
+                  <button
+                    onClick={() => scrollToSection("about")}
+                    className="text-sm font-medium py-3 hover:text-primary hover:pl-2 transition-all text-left"
                   >
                     Chi Sono
-                  </a>
-                  <a
-                    href="#blog"
-                    className="text-sm font-medium py-3 hover:text-primary hover:pl-2 transition-all"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    Blog
-                  </a>
-                  <a
-                    href="#resume"
-                    className="text-sm font-medium py-3 hover:text-primary hover:pl-2 transition-all"
-                    onClick={() => setIsMobileMenuOpen(false)}
+                  </button>
+                  <button
+                    onClick={() => scrollToSection("resume")}
+                    className="text-sm font-medium py-3 hover:text-primary hover:pl-2 transition-all text-left"
                   >
                     Curriculum
-                  </a>
-                  <a
-                    href="#contact"
-                    className="text-sm font-medium py-3 hover:text-primary hover:pl-2 transition-all"
-                    onClick={() => setIsMobileMenuOpen(false)}
+                  </button>
+                  <button
+                    onClick={() => scrollToSection("contact")}
+                    className="text-sm font-medium py-3 hover:text-primary hover:pl-2 transition-all text-left"
                   >
                     Contatti
-                  </a>
+                  </button>
                   <div className="flex gap-3 mt-4">
                     <Button onClick={downloadCV} className="gap-2 flex-1" size="sm">
                       <FileDown className="h-4 w-4" /> CV

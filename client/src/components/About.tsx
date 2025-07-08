@@ -1,35 +1,39 @@
 import SkillCard from "./SkillCard";
-import { BookOpen, Camera, Podcast, Music } from "lucide-react";
+import { Code2, Network, Cpu, Zap } from "lucide-react";
 
 const About = () => {
   const skills = [
     {
-      icon: <BookOpen className="h-6 w-6" />,
-      title: "Scrittura",
-      description: "Articoli, riflessioni e racconti su vari argomenti di interesse personale e attualità."
+      icon: <Code2 className="h-6 w-6" />,
+      title: "Algoritmi e programmazione",
+      description:
+        "Capacità di creare e modificare algoritmi di ogni livello di astrazione, utilizzando molteplici linguaggi di programmazione.",
     },
     {
-      icon: <Camera className="h-6 w-6" />,
-      title: "Fotografia",
-      description: "Immagini che catturano momenti, luoghi e la bellezza della vita quotidiana."
+      icon: <Network className="h-6 w-6" />,
+      title: "Reti e Protocolli",
+      description:
+        "Ottima conoscenza della pila ISO/OSI e dei suoi protocolli caratterizzanti.",
     },
     {
-      icon: <Podcast className="h-6 w-6" />,
-      title: "Podcast",
-      description: "Conversazioni audio su temi di attualità, cultura e storie personali."
+      icon: <Cpu className="h-6 w-6" />,
+      title: "IoT",
+      description:
+        "Conoscenza e programmazione dei principali componenti dei sistemi IoT (sensori, microcontrollori, comunicazioni) sia software che hardware.",
     },
     {
-      icon: <Music className="h-6 w-6" />,
-      title: "Musica",
-      description: "Condivisione di playlist, recensioni e riflessioni sul mondo musicale."
-    }
+      icon: <Zap className="h-6 w-6" />,
+      title: "Circuiti, Hardware e Segnali",
+      description:
+        "Ottima conoscenza e padronanza sia teorica che pratica di molteplici aspetti di basso livello.",
+    },
   ];
 
   const personalInfo = [
     { label: "Nome:", value: "Alessio Sorrentino" },
     { label: "Email:", value: "alessiosor1304@gmail.com" },
     { label: "Località:", value: "Torino, Italia" },
-    { label: "Social:", value: "Instagram, LinkedIn" }
+    { label: "Social:", value: "Instagram, LinkedIn, Facebook, Twitter" },
   ];
 
   return (
@@ -46,18 +50,26 @@ const About = () => {
               Un appassionato di tecnologia e spazio
             </h3>
             <p className="text-muted-foreground mb-6">
-              Ciao, sono Alessio e questo è il mio angolo di web dove condivido pensieri e fornisco informazioni su me stesso.
-              La mia avventura nel mondo del blogging è iniziata alcuni anni fa, spinto dalla voglia di 
-              esprimere idee e connettermi con persone che condividono i miei stessi interessi.
+              Ciao! sono Alessio Sorrentino, sono nato nell'aprile del 2003 e
+              fin da piccolo ho avuto una passione per la tecnologia. Nel tempo
+              ho fatto diverse esperienze lavorative e ho acquisito diverse
+              competenze che mi hanno permesso di crescere come persona e
+              professionista nel mondo del lavoro.
             </p>
             <p className="text-muted-foreground mb-6">
-              Credo fortemente nel potere della condivisione di esperienze e nella capacità della narrazione
-              di creare connessioni autentiche. In questo spazio troverai contenuti personali, riflessioni
-              e racconti delle mie passioni più grandi.
+              Credo fortemente in me stesso e nelle mie capacità: so di avere
+              solide basi, ma so anche che c’è sempre spazio per migliorare.
+              Penso che le sfide vadano affrontate con determinazione, visione e
+              spirito di squadra. Sono pronto a dare il massimo, a mettermi in
+              gioco ogni giorno e ad apprendere tutto ciò che serve per
+              crescere, sia come professionista che come persona.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
               {personalInfo.map((info, index) => (
-                <div key={index} className="bg-primary/5 p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
+                <div
+                  key={index}
+                  className="bg-primary/5 p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-300"
+                >
                   <p className="font-medium mb-1">{info.label}</p>
                   <p className="text-muted-foreground">{info.value}</p>
                 </div>
@@ -67,7 +79,7 @@ const About = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {skills.map((skill, index) => (
-              <SkillCard 
+              <SkillCard
                 key={index}
                 icon={skill.icon}
                 title={skill.title}

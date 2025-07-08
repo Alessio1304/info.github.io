@@ -143,16 +143,17 @@ const Resume = () => {
             </h3>
             <div>
               <TimelineItem
-                year="2022 - Presente"
-                title="Studente"
-                organization="Politecnico di Torino"
-                description="Impegno full-time nel percorso di laurea in Ingegneria Informatica."
-              />
-              <TimelineItem
                 year="2017 - 2022"
                 title="Lavoratore Estivo"
                 organization="Stabilimenti Balneari"
                 description="Un piccolo inizio di pratica nel mondo del lavoro, affinando le relazioni con colleghi e datori di lavoro."
+              />
+              <TimelineItem
+                year="2022 - "
+                title="Studente"
+                organization="Politecnico di Torino"
+                description="Impegno full-time nel percorso di laurea in Ingegneria Informatica."
+                
               />
             </div>
           </div>

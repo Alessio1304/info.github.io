@@ -6,7 +6,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Resume from "@/components/Resume";
-import Blog from "@/components/Blog";
+//import Blog from "@/components/Blog";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import { useEffect } from "react";
@@ -50,7 +50,7 @@ function App({ basename = "/" }: AppProps) {
                 <Hero />
                 <About />
                 <Resume />
-                <Blog />
+                
                 <Contact />
               </>
             </Route>
