@@ -4,6 +4,20 @@ import { useEffect, useState } from "react";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const [showScrollTop, setShowScrollTop] = useState(false);
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const headerOffset = 80;
+      const elementPosition = element.offsetTop;
+      const offsetPosition = elementPosition - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+  };
   
   useEffect(() => {
     const handleScroll = () => {
@@ -32,8 +46,6 @@ const Footer = () => {
           <div className="flex flex-col items-center md:items-start">
             <h3 className="text-xl font-semibold mb-4">Alessio Sorrentino</h3>
             <p className="text-primary-foreground/80 text-sm mb-6 text-center md:text-left">
-              Blogger e appassionato di tecnologia, condivido le mie esperienze e riflessioni 
-              attraverso questo spazio personale.
             </p>
             <div className="flex space-x-4">
               <a 
@@ -60,19 +72,29 @@ const Footer = () => {
           <div className="flex flex-col items-center">
             <h4 className="text-lg font-medium mb-4">Navigazione</h4>
             <nav className="flex flex-col space-y-2 items-center">
-              <a href="#about" className="hover:underline transition-all hover:translate-x-1 duration-300">Chi Sono</a>
-              <a href="#blog" className="hover:underline transition-all hover:translate-x-1 duration-300">Blog</a>
-              <a href="#resume" className="hover:underline transition-all hover:translate-x-1 duration-300">Curriculum</a>
-              <a href="#contact" className="hover:underline transition-all hover:translate-x-1 duration-300">Contatti</a>
+              <button 
+                onClick={() => scrollToSection("about")} 
+                className="hover:underline transition-all hover:translate-x-1 duration-300"
+              >
+                Chi Sono
+              </button>
+              <button 
+                onClick={() => scrollToSection("resume")} 
+                className="hover:underline transition-all hover:translate-x-1 duration-300"
+              >
+                Curriculum
+              </button>
+              <button 
+                onClick={() => scrollToSection("contact")} 
+                className="hover:underline transition-all hover:translate-x-1 duration-300"
+              >
+                Contatti
+              </button>
             </nav>
           </div>
           
           <div className="flex flex-col items-center md:items-end">
             <div className="mb-6 text-center md:text-right max-w-xs">
-              <p className="italic text-primary-foreground/90">
-                "La scrittura è l'unica cosa che, quando la condivido con gli altri, diventa più grande."
-              </p>
-              <p className="mt-2 text-sm text-primary-foreground/70">— Paulo Coelho</p>
             </div>
             
             <div className="w-20 h-1 bg-accent mb-4"></div>

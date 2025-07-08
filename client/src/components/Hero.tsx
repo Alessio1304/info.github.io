@@ -5,6 +5,20 @@ import { useState, useEffect } from "react";
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const headerOffset = 80;
+      const elementPosition = element.offsetTop;
+      const offsetPosition = elementPosition - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+  };
+
   useEffect(() => {
     // Attivare le animazioni dopo che il componente è montato
     const timer = setTimeout(() => {
@@ -42,17 +56,10 @@ const Hero = () => {
             </p>
             <div className="space-x-4">
               <Button
-                asChild
+                onClick={() => scrollToSection("contact")}
                 className="shadow-lg hover:shadow-xl transition-all duration-300 hover:translate-y-[-2px]"
               >
-                <a href="#contact">Contattami</a>
-              </Button>
-              <Button
-                variant="outline"
-                asChild
-                className="shadow hover:shadow-md transition-all duration-300 hover:translate-y-[-2px]"
-              >
-                <a href="#Blog">Leggi il Blog</a>
+                Contattami
               </Button>
             </div>
 

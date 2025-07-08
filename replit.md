@@ -24,6 +24,17 @@ Repository per il sito personale di Alessio Sorrentino contenente curriculum, bl
 
 ## Recent Changes
 
+### 2024-07-07 - Aggiornamenti di navigazione e ottimizzazione finale
+- ✅ Rimossa sezione blog dal menu desktop e mobile come richiesto dall'utente
+- ✅ Aggiornate icone nella sezione About con simboli tecnici appropriati:
+  - Code2 per "Algoritmi e programmazione"
+  - Network per "Reti e Protocolli"  
+  - Cpu per "IoT"
+  - Zap per "Circuiti, Hardware e Segnali"
+- ✅ Implementata navigazione smooth scroll in Header, Hero e Footer
+- ✅ Sostituiti tutti i link <a href="#"> con button onClick per migliore controllo
+- ✅ Aggiornata build finale per GitHub Pages nella cartella `github-pages-deploy/`
+
 ### 2024-04-14 - Configurazione completa per GitHub Pages
 - ✅ Aggiornato percorso base da `/info/` a `/info.github.io/`
 - ✅ Modificato `client/src/main.tsx` per utilizzare il nuovo percorso base
@@ -36,21 +47,28 @@ Repository per il sito personale di Alessio Sorrentino contenente curriculum, bl
 
 ### File Structure for GitHub Pages
 ```
-github-pages-final/
-├── index.html          # File principale con percorsi relativi
+github-pages-deploy/
+├── index.html          # File principale con percorsi relativi e navigation smooth
 ├── 404.html           # Gestione routing per SPA
 ├── .nojekyll          # Disabilita Jekyll processing
-├── README.md          # Istruzioni per deploy
+├── README.md          # Istruzioni complete per deploy
 └── assets/
-    ├── index-[hash].js   # JavaScript bundle
-    └── index-[hash].css  # CSS styles
+    ├── index-[hash].js   # JavaScript bundle ottimizzato
+    └── index-[hash].css  # CSS styles ottimizzati
 ```
 
 ## Deploy Instructions
-1. Copiare tutti i file da `github-pages-final/` nel repository `info.github.io`
+1. Copiare tutti i file da `github-pages-deploy/` nel repository `info.github.io`
 2. Fare push su GitHub
-3. Abilitare GitHub Pages nelle impostazioni del repository
+3. Abilitare GitHub Pages nelle impostazioni del repository (Source: Deploy from a branch, Branch: main, Folder: / root)
 4. Il sito sarà disponibile su https://alessio1304.github.io/info.github.io/
+
+## Current Project Status
+- Navigazione completamente funzionante con smooth scroll
+- Sezione blog rimossa come richiesto
+- Icone aggiornate per riflettere competenze tecniche
+- Build ottimizzata per GitHub Pages deployment
+- Tutti i link e navigazione testati e funzionanti
 
 ## Development Notes
 - Il progetto è configurato per funzionare sia in sviluppo locale che in produzione su GitHub Pages
