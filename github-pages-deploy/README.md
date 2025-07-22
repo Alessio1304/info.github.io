@@ -21,7 +21,7 @@ Il sito sarà disponibile all'indirizzo: `https://alessio1304.github.io/info.git
    cd info.github.io
    # Copia tutti i file da github-pages-deploy/ qui
    git add .
-   git commit -m "Deploy portfolio website"
+   git commit -m "Deploy portfolio website with profile image"
    git push origin main
    ```
 
@@ -40,7 +40,10 @@ Il repository principale include già un workflow GitHub Actions che automatizza
 
 - `index.html`: Pagina principale del sito con percorsi relativi
 - `404.html`: Gestisce le route per SPA (Single Page Application)
-- `assets/`: File JavaScript, CSS e immagini ottimizzati con hash per il caching
+- `assets/`: File JavaScript, CSS e immagine profilo ottimizzati con hash per il caching
+  - `IMG_9754-D2Y27lE3.jpeg`: Immagine profilo di Alessio
+  - `index-CqpQqAHP.js`: JavaScript bundle ottimizzato
+  - `index-fNoL-I0C.css`: CSS styles ottimizzati
 - `.nojekyll`: Impedisce a Jekyll di processare i file
 
 ## Note tecniche
@@ -49,13 +52,15 @@ Il repository principale include già un workflow GitHub Actions che automatizza
 - Il percorso base è configurato per `/info.github.io/`
 - Tutti i percorsi delle risorse sono relativi per funzionare correttamente
 - La navigazione utilizza smooth scroll per una migliore esperienza utente
-- Include immagine profilo e icone social aggiornate
+- Immagine profilo integrata correttamente nella sezione About
+- File ottimizzati con hash per evitare problemi di cache
 
 ## Aggiornamenti recenti
 
+- ✅ **RISOLTO**: Problema visualizzazione immagine profilo IMG_9754.jpeg su GitHub Pages
+- ✅ Immagine profilo caricata correttamente con hash unico (IMG_9754-D2Y27lE3.jpeg)
+- ✅ Percorsi relativi configurati per GitHub Pages deployment
 - ✅ Sostituita icona Twitter con icona X (nuovo logo social)
 - ✅ Riordinate competenze professionali in ordine alfabetico
-- ✅ Aggiunta immagine profilo personale nella sezione About
 - ✅ Implementata navigazione smooth scroll per tutti i componenti
-- ✅ Percorsi ottimizzati per GitHub Pages deployment
-- ✅ File ottimizzati con hash per caching
+- ✅ File ottimizzati con hash per caching ottimale

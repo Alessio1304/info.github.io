@@ -24,6 +24,13 @@ Repository per il sito personale di Alessio Sorrentino contenente curriculum, bl
 
 ## Recent Changes
 
+### 2024-07-22 - Risoluzione problema immagine e deploy finale
+- ✅ **RISOLTO**: Problema visualizzazione immagine profilo IMG_9754.jpeg su GitHub Pages
+- ✅ Corretto percorso immagine da `@assets/IMG_9754.jpeg` a `../IMG_9754.jpeg` 
+- ✅ Immagine profilo generata correttamente con hash unico (IMG_9754-D2Y27lE3.jpeg)
+- ✅ Percorsi file convertiti da assoluti a relativi per GitHub Pages (./assets/)
+- ✅ Build finale ottimizzata con immagine funzionante per deployment
+
 ### 2024-07-08 - Aggiornamenti finali e ottimizzazioni social/immagini
 - ✅ Sostituita icona Twitter con icona X in tutti i componenti social
 - ✅ Riordinate competenze professionali in ordine alfabetico:
