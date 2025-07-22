@@ -56,4 +56,7 @@ Il repository principale include già un workflow GitHub Actions che automatizza
 - ✅ Rimossa sezione blog dal menu e dalla struttura
 - ✅ Aggiornate icone nella sezione About con simboli tecnici appropriati
 - ✅ Implementata navigazione smooth scroll per tutti i componenti
+- ✅ Sostituita icona Twitter con icona X (nuovo logo social)
+- ✅ Riordinate competenze professionali in ordine alfabetico
+- ✅ Aggiunta immagine profilo personale nella sezione About
 - ✅ Percorsi ottimizzati per GitHub Pages deployment

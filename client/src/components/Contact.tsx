@@ -21,7 +21,7 @@ import {
   Mail,
   Phone,
   Send,
-  Twitter,
+  X,
   Linkedin,
   Instagram,
   Facebook,
@@ -92,7 +92,7 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-1 gap-10">
           {/* Contact Info */}
           <div className="lg:col-span-1 space-y-6">
             <Card>
@@ -162,10 +162,10 @@ const Contact = () => {
                       href="https://twitter.com"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-muted h-12 w-12 rounded-full flex items-center justify-center hover:bg-[#1DA1F2] hover:text-white transition-all duration-300 transform hover:scale-110"
-                      aria-label="Twitter"
+                      className="bg-muted h-12 w-12 rounded-full flex items-center justify-center hover:bg-black hover:text-white transition-all duration-300 transform hover:scale-110"
+                      aria-label="X (Twitter)"
                     >
-                      <Twitter className="h-6 w-6" />
+                      <X className="h-6 w-6" />
                     </a>
                     <a
                       href="https://www.facebook.com/alessio.sorrentino.370"

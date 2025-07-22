@@ -24,6 +24,17 @@ Repository per il sito personale di Alessio Sorrentino contenente curriculum, bl
 
 ## Recent Changes
 
+### 2024-07-08 - Aggiornamenti finali e ottimizzazioni social/immagini
+- ✅ Sostituita icona Twitter con icona X in tutti i componenti social
+- ✅ Riordinate competenze professionali in ordine alfabetico:
+  - Algoritmi e programmazione
+  - Circuiti, Hardware e Segnali  
+  - IoT
+  - Reti e Protocolli
+- ✅ Aggiunta immagine profilo personale (IMG_9754.jpeg) nella sezione About
+- ✅ Aggiornata build finale con tutti i cambiamenti per GitHub Pages
+- ✅ File ottimizzati con hash per caching nella cartella `github-pages-deploy/`
+
 ### 2024-07-07 - Aggiornamenti di navigazione e ottimizzazione finale
 - ✅ Rimossa sezione blog dal menu desktop e mobile come richiesto dall'utente
 - ✅ Aggiornate icone nella sezione About con simboli tecnici appropriati:

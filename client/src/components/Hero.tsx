@@ -35,7 +35,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center pt-16 pb-8 bg-gradient-to-br from-background via-background to-secondary/10">
+    <section className="min-h-screen flex items-center justify-center pt-20 pb-8 bg-gradient-to-br from-background via-background to-secondary/10">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           <div
@@ -48,11 +48,11 @@ const Hero = () => {
               </span>
             </h1>
             <h2 className="text-2xl md:text-3xl font-medium text-muted-foreground mb-6">
-              Laurendo in Ingegneria Informatica
+              Laureato in Ingegneria Informatica
             </h2>
             <p className="text-lg mb-8 max-w-xl mx-auto lg:mx-0">
               Benvenuto nel mio portfolio personale, dove potrai avere maggiori
-              informazioni su di me e i miei progetti.
+              informazioni su di me.
             </p>
             <div className="space-x-4">
               <Button
@@ -91,7 +91,7 @@ const Hero = () => {
             <div className="relative w-full h-full aspect-square rounded-full overflow-hidden border-4 border-primary/20 p-2 shadow-xl hover:shadow-2xl transition-all duration-500 hover:border-primary/40">
               <div className="bg-gradient-to-br from-primary/10 to-primary/30 rounded-full w-full h-full flex items-center justify-center overflow-hidden">
                 <img
-                  src="https://media.licdn.com/dms/image/v2/D4E03AQFTY0M7vosrZg/profile-displayphoto-shrink_200_200/B4EZYKOAhaGYAY-/0/1743928167244?e=2147483647&v=beta&t=hAC3Q_7WhdHFVI1Z6bYto99_LtRTSG1hle2DHCXFP0k"
+                  src="./src/IMG_9754.jpeg"
                   alt="Alessio Sorrentino"
                   className="w-[90%] h-[90%] object-cover rounded-full transition-transform duration-700 hover:scale-105"
                 />

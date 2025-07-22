@@ -51,10 +51,10 @@ const Resume = () => {
   // Function to download CV
   const downloadCV = () => {
     // Create a link element
-    const link = document.createElement('a');
+    const link = document.createElement("a");
     // Set link properties for CV file (must be in the public folder for GitHub Pages)
-    link.href = './CV_Alessio_Sorrentino.pdf';
-    link.download = 'CV_Alessio_Sorrentino.pdf';
+    link.href = "./CV_Alessio_Sorrentino.pdf";
+    link.download = "CV_Alessio_Sorrentino.pdf";
     // Append to the document
     document.body.appendChild(link);
     // Trigger the download
@@ -113,10 +113,10 @@ const Resume = () => {
                 description="Competenze tecniche nell'assemblaggio, manutenzione e aggiornamento di PC, installazione e gestione di sistemi operativi (Windows, Mac, Linux) e configurazione di reti, dispositivi mobili e stampanti. Esperienza nell'uso sicuro degli strumenti, nel troubleshooting avanzato e nell'implementazione di misure di sicurezza IT."
               />
               <TimelineItem
-                year="2022 - "
-                title="Iscrizione presso il Politecnico di Torino"
+                year="2022 - 2025"
+                title="Laurea con lode in Ingegneria Informatica"
                 organization="Politecnico di Torino"
-                description="Il corso di laurea triennale in Ingegneria Informatica del Politecnico di Torino forma professionisti capaci di gestire sistemi digitali complessi, con solide basi in matematica, fisica e informatica, e competenze specifiche in architettura dei calcolatori, programmazione, basi di dati e reti di calcolatori. "
+                description="Il corso di laurea triennale in Ingegneria Informatica del Politecnico di Torino forma professionisti capaci di gestire sistemi digitali complessi, con solide basi in matematica, fisica e informatica, e competenze specifiche in architettura dei calcolatori, programmazione, basi di dati e reti di calcolatori."
               />
               <TimelineItem
                 year="2024"
@@ -155,11 +155,10 @@ const Resume = () => {
                 description="Un piccolo inizio di pratica nel mondo del lavoro, affinando le relazioni con colleghi e datori di lavoro."
               />
               <TimelineItem
-                year="2022 - "
-                title="Studente"
+                year="2022 - 2025"
+                title="Attività di laboratorio"
                 organization="Politecnico di Torino"
-                description="Impegno full-time nel percorso di laurea in Ingegneria Informatica."
-                
+                description="Varie attività di laboratorio svolte in team, mirate ad approfondire le materie studiate."
               />
             </div>
           </div>
@@ -172,47 +171,59 @@ const Resume = () => {
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             <div>
-              <SkillItem 
-                name="Wireshark" 
+              <SkillItem
+                name="Wireshark"
                 description="Analizzatore di protocollo di rete per l'ispezione e la risoluzione dei problemi di comunicazione di rete."
               />
-              <SkillItem 
-                name="Matlab" 
+              <SkillItem
+                name="Matlab"
                 description="Piattaforma per l'analisi numerica e il calcolo scientifico, utilizzato per la modellazione matematica e la simulazione."
               />
-              <SkillItem 
-                name="Bash" 
+              <SkillItem
+                name="Bash"
                 description="Shell e linguaggio di scripting per l'automazione e il controllo dei sistemi operativi Unix/Linux."
               />
-              <SkillItem 
-                name="Python" 
+              <SkillItem
+                name="Python"
                 description="Linguaggio di programmazione versatile utilizzato per lo sviluppo web, l'analisi dati, l'automazione e l'intelligenza artificiale."
               />
-              <SkillItem 
-                name="Git" 
+              <SkillItem
+                name="Git"
                 description="Sistema di controllo di versione distribuito per tracciare le modifiche nel codice sorgente durante lo sviluppo software."
+              />
+              <SkillItem
+                name="HTML"
+                description="Linguaggio di markup per la creazione di pagine web e applicazioni."
               />
             </div>
             <div>
-              <SkillItem 
-                name="HTML" 
-                description="Linguaggio di markup per la creazione di pagine web e applicazioni."
-              />
-              <SkillItem 
-                name="SQL" 
+              <SkillItem
+                name="SQL"
                 description="Linguaggio standard per la gestione e l'interrogazione di database relazionali."
               />
-              <SkillItem 
-                name="MIPS" 
+              <SkillItem
+                name="MIPS"
                 description="Architettura di processori RISC utilizzata nell'insegnamento dei principi di architettura dei computer."
               />
-              <SkillItem 
-                name="C" 
+              <SkillItem
+                name="C"
                 description="Linguaggio di programmazione di basso livello utilizzato per lo sviluppo di sistemi operativi e applicazioni ad alte prestazioni."
               />
-              <SkillItem 
-                name="Java" 
+              <SkillItem
+                name="Java"
                 description="Linguaggio di programmazione orientato agli oggetti utilizzato per lo sviluppo di applicazioni enterprise e Android."
+              />
+              <SkillItem
+                name="Arduino"
+                description="Sviluppo di applicazioni interattive che controllano dispositivi elettronici attraverso codice."
+              />
+              <SkillItem
+                name="Verilog"
+                description="Linguaggio di descrizione hardware (HDL) usato per modellare circuiti digitali."
+              />
+              <SkillItem
+                name="Simulink"
+                description="Ambiente grafico di modellazione e simulazione integrato in MATLAB."
               />
             </div>
           </div>
