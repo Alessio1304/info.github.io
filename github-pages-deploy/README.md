@@ -7,13 +7,13 @@ Il sito sarà disponibile all'indirizzo: `https://alessio1304.github.io/info.git
 
 ## Istruzioni per il deploy
 
-### Opzione 1: Upload diretto dei file
+### Opzione 1: Upload diretto dei file (CONSIGLIATA)
 1. **Crea il repository su GitHub:**
    - Nome repository: `info.github.io`
    - Assicurati che sia pubblico
 
 2. **Carica i file:**
-   - Scarica tutti i file da questa cartella
+   - Scarica tutti i file da questa cartella `github-pages-deploy/`
    - Caricali direttamente nel repository tramite interfaccia web GitHub
    - Oppure usa git:
    ```bash
@@ -21,7 +21,7 @@ Il sito sarà disponibile all'indirizzo: `https://alessio1304.github.io/info.git
    cd info.github.io
    # Copia tutti i file da github-pages-deploy/ qui
    git add .
-   git commit -m "Deploy portfolio website with profile image"
+   git commit -m "Deploy portfolio website - versione finale"
    git push origin main
    ```
 
@@ -33,34 +33,41 @@ Il sito sarà disponibile all'indirizzo: `https://alessio1304.github.io/info.git
    - Cartella: "/ (root)"
    - Clicca "Save"
 
-### Opzione 2: GitHub Actions (consigliata)
-Il repository principale include già un workflow GitHub Actions che automatizza il deploy.
+## Struttura dei file ottimizzati
 
-## Struttura dei file
-
-- `index.html`: Pagina principale del sito con percorsi relativi
+- `index.html`: Pagina principale con percorsi relativi per GitHub Pages
 - `404.html`: Gestisce le route per SPA (Single Page Application)
-- `assets/`: File JavaScript, CSS e immagine profilo ottimizzati con hash per il caching
-  - `IMG_9754-D2Y27lE3.jpeg`: Immagine profilo di Alessio
-  - `index-CqpQqAHP.js`: JavaScript bundle ottimizzato
-  - `index-fNoL-I0C.css`: CSS styles ottimizzati
+- `assets/`: Cartella con tutti i file ottimizzati
+  - `IMG_9754-D2Y27lE3.jpeg`: Immagine profilo di Alessio (1.8MB ottimizzata)
+  - `index-Ckdwd-iC.js`: JavaScript bundle ottimizzato (343KB)
+  - `index-BSTQ0X5z.css`: CSS styles ottimizzati (68KB)
 - `.nojekyll`: Impedisce a Jekyll di processare i file
+- `README.md`: Questo file con le istruzioni
 
-## Note tecniche
+## Caratteristiche tecniche
 
-- Il sito utilizza routing basato su hash per compatibilità con GitHub Pages
-- Il percorso base è configurato per `/info.github.io/`
-- Tutti i percorsi delle risorse sono relativi per funzionare correttamente
-- La navigazione utilizza smooth scroll per una migliore esperienza utente
-- Immagine profilo integrata correttamente nella sezione About
-- File ottimizzati con hash per evitare problemi di cache
+✅ **Routing basato su hash** per compatibilità con GitHub Pages  
+✅ **Percorso base configurato** per `/info.github.io/`  
+✅ **Percorsi relativi** per tutte le risorse (./assets/)  
+✅ **Navigazione smooth scroll** implementata  
+✅ **Immagine profilo integrata** correttamente  
+✅ **File ottimizzati** con hash per evitare problemi di cache  
+✅ **Icone social aggiornate** (X al posto di Twitter)  
+✅ **Competenze professionali** riordinate alfabeticamente  
 
-## Aggiornamenti recenti
+## Cosa è incluso
 
-- ✅ **RISOLTO**: Problema visualizzazione immagine profilo IMG_9754.jpeg su GitHub Pages
-- ✅ Immagine profilo caricata correttamente con hash unico (IMG_9754-D2Y27lE3.jpeg)
-- ✅ Percorsi relativi configurati per GitHub Pages deployment
-- ✅ Sostituita icona Twitter con icona X (nuovo logo social)
-- ✅ Riordinate competenze professionali in ordine alfabetico
-- ✅ Implementata navigazione smooth scroll per tutti i componenti
-- ✅ File ottimizzati con hash per caching ottimale
+- Portfolio personale responsive
+- Sezione "Chi Sono" con immagine profilo
+- Sezione "Curriculum" professionale
+- Sezione "Contatti" con form e social links
+- Navigazione smooth tra sezioni
+- Design ottimizzato per mobile, tablet e desktop
+
+## Deploy finale
+
+**TUTTO PRONTO PER IL PUSH!** 
+
+Basta copiare i file dalla cartella `github-pages-deploy/` nel tuo repository GitHub `info.github.io` e il sito funzionerà perfettamente su:
+
+**`https://alessio1304.github.io/info.github.io/`**

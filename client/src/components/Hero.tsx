@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown, ExternalLink } from "lucide-react";
+import ProfileImage from "@/IMG_9754.jpeg";
 import { useState, useEffect } from "react";
 
 const Hero = () => {
@@ -91,7 +92,7 @@ const Hero = () => {
             <div className="relative w-full h-full aspect-square rounded-full overflow-hidden border-4 border-primary/20 p-2 shadow-xl hover:shadow-2xl transition-all duration-500 hover:border-primary/40">
               <div className="bg-gradient-to-br from-primary/10 to-primary/30 rounded-full w-full h-full flex items-center justify-center overflow-hidden">
                 <img
-                  src="./src/IMG_9754.jpeg"
+                  src= { ProfileImage }
                   alt="Alessio Sorrentino"
                   className="w-[90%] h-[90%] object-cover rounded-full transition-transform duration-700 hover:scale-105"
                 />

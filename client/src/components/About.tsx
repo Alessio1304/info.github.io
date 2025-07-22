@@ -1,6 +1,5 @@
 import SkillCard from "./SkillCard";
 import { Code2, Network, Cpu, Zap } from "lucide-react";
-import profileImage from "../IMG_9754.jpeg";
 
 const About = () => {
   const skills = [
@@ -34,7 +33,7 @@ const About = () => {
     { label: "Nome e Cognome:", value: "Alessio Sorrentino" },
     { label: "Email:", value: "alessiosor1304@gmail.com" },
     { label: "Località:", value: "Torino, Italia" },
-    { label: "Social:", value: "Instagram, LinkedIn, Facebook, X" },
+    { label: "Social:", value: "Instagram, LinkedIn, Facebook, Twitter" },
   ];
 
   return (
@@ -46,16 +45,7 @@ const About = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="relative order-2 lg:order-1">
-            <div className="mb-8 lg:mb-0">
-              <img
-                src={profileImage}
-                alt="Alessio Sorrentino"
-                className="w-full max-w-md mx-auto rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:scale-105"
-              />
-            </div>
-          </div>
-          <div className="order-1 lg:order-2">
+          <div>
             <h3 className="text-2xl font-semibold mb-4">
               Un appassionato di tecnologia e spazio
             </h3>
