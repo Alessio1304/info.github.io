@@ -40,7 +40,7 @@ Il repository principale include già un workflow GitHub Actions che automatizza
 
 - `index.html`: Pagina principale del sito con percorsi relativi
 - `404.html`: Gestisce le route per SPA (Single Page Application)
-- `assets/`: File JavaScript e CSS ottimizzati con hash per il caching
+- `assets/`: File JavaScript, CSS e immagini ottimizzati con hash per il caching
 - `.nojekyll`: Impedisce a Jekyll di processare i file
 
 ## Note tecniche
@@ -49,14 +49,13 @@ Il repository principale include già un workflow GitHub Actions che automatizza
 - Il percorso base è configurato per `/info.github.io/`
 - Tutti i percorsi delle risorse sono relativi per funzionare correttamente
 - La navigazione utilizza smooth scroll per una migliore esperienza utente
-- Non include più la sezione blog come richiesto dall'utente
+- Include immagine profilo e icone social aggiornate
 
 ## Aggiornamenti recenti
 
-- ✅ Rimossa sezione blog dal menu e dalla struttura
-- ✅ Aggiornate icone nella sezione About con simboli tecnici appropriati
-- ✅ Implementata navigazione smooth scroll per tutti i componenti
 - ✅ Sostituita icona Twitter con icona X (nuovo logo social)
 - ✅ Riordinate competenze professionali in ordine alfabetico
 - ✅ Aggiunta immagine profilo personale nella sezione About
+- ✅ Implementata navigazione smooth scroll per tutti i componenti
 - ✅ Percorsi ottimizzati per GitHub Pages deployment
+- ✅ File ottimizzati con hash per caching

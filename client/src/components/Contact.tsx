@@ -162,10 +162,14 @@ const Contact = () => {
                       href="https://twitter.com"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-muted h-12 w-12 rounded-full flex items-center justify-center hover:bg-black hover:text-white transition-all duration-300 transform hover:scale-110"
-                      aria-label="X (Twitter)"
+                      className="bg-muted h-12 w-12 rounded-full flex items-center justify-center hover:bg-white hover:text-white transition-all duration-300 transform hover:scale-110"
+                      aria-label="X"
                     >
-                      <X className="h-6 w-6" />
+                      <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/c/ce/X_logo_2023.svg"
+                        alt="X logo"
+                        className="h-6 w-6"
+                      />
                     </a>
                     <a
                       href="https://www.facebook.com/alessio.sorrentino.370"

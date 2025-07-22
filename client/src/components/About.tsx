@@ -1,6 +1,5 @@
 import SkillCard from "./SkillCard";
 import { Code2, Network, Cpu, Zap } from "lucide-react";
-import profileImage from "@/IMG_9754.jpeg";
 
 const About = () => {
   const skills = [
@@ -11,10 +10,10 @@ const About = () => {
         "Capacità di creare e modificare algoritmi di ogni livello di astrazione, utilizzando molteplici linguaggi di programmazione.",
     },
     {
-      icon: <Zap className="h-6 w-6" />,
-      title: "Circuiti, Hardware e Segnali",
+      icon: <Network className="h-6 w-6" />,
+      title: "Reti e Protocolli",
       description:
-        "Ottima conoscenza e padronanza sia teorica che pratica di molteplici aspetti di basso livello.",
+        "Ottima conoscenza della pila ISO/OSI e dei suoi protocolli caratterizzanti.",
     },
     {
       icon: <Cpu className="h-6 w-6" />,
@@ -23,10 +22,10 @@ const About = () => {
         "Conoscenza e programmazione dei principali componenti dei sistemi IoT (sensori, microcontrollori, comunicazioni) sia software che hardware.",
     },
     {
-      icon: <Network className="h-6 w-6" />,
-      title: "Reti e Protocolli",
+      icon: <Zap className="h-6 w-6" />,
+      title: "Circuiti, Hardware e Segnali",
       description:
-        "Ottima conoscenza della pila ISO/OSI e dei suoi protocolli caratterizzanti.",
+        "Ottima conoscenza e padronanza sia teorica che pratica di molteplici aspetti di basso livello.",
     },
   ];
 
@@ -34,7 +33,7 @@ const About = () => {
     { label: "Nome e Cognome:", value: "Alessio Sorrentino" },
     { label: "Email:", value: "alessiosor1304@gmail.com" },
     { label: "Località:", value: "Torino, Italia" },
-    { label: "Social:", value: "Instagram, LinkedIn, Facebook, X" },
+    { label: "Social:", value: "Instagram, LinkedIn, Facebook, Twitter" },
   ];
 
   return (
@@ -46,15 +45,6 @@ const About = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="relative">
-            <div className="mb-8 lg:mb-0">
-              <img
-                src={profileImage}
-                alt="Alessio Sorrentino"
-                className="w-full max-w-md mx-auto rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:scale-105"
-              />
-            </div>
-          </div>
           <div>
             <h3 className="text-2xl font-semibold mb-4">
               Un appassionato di tecnologia e spazio

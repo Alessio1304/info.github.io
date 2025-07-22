@@ -77,9 +77,12 @@ github-pages-deploy/
 ## Current Project Status
 - Navigazione completamente funzionante con smooth scroll
 - Sezione blog rimossa come richiesto
-- Icone aggiornate per riflettere competenze tecniche
-- Build ottimizzata per GitHub Pages deployment
+- Icone aggiornate per riflettere competenze tecniche (inclusa sostituzione Twitter → X)
+- Competenze professionali riordinate alfabeticamente
+- Immagine profilo integrata nella sezione About
+- Build finale ottimizzata per GitHub Pages deployment nella cartella `github-pages-deploy/`
 - Tutti i link e navigazione testati e funzionanti
+- Percorsi relativi configurati correttamente per deployment
 
 ## Development Notes
 - Il progetto è configurato per funzionare sia in sviluppo locale che in produzione su GitHub Pages

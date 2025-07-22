@@ -8,6 +8,76 @@ interface TimelineItemProps {
   description: string;
 }
 
+const skills = [
+  {
+    name: "Arduino",
+    description:
+      "Sviluppo di applicazioni interattive che controllano dispositivi elettronici attraverso codice.",
+  },
+  {
+    name: "Bash",
+    description:
+      "Shell e linguaggio di scripting per l'automazione e il controllo dei sistemi operativi Unix/Linux.",
+  },
+  {
+    name: "C",
+    description:
+      "Linguaggio di programmazione di basso livello utilizzato per lo sviluppo di sistemi operativi e applicazioni ad alte prestazioni.",
+  },
+  {
+    name: "Git",
+    description:
+      "Sistema di controllo di versione distribuito per tracciare le modifiche nel codice sorgente durante lo sviluppo software.",
+  },
+  {
+    name: "HTML",
+    description:
+      "Linguaggio di markup per la creazione di pagine web e applicazioni.",
+  },
+  {
+    name: "Java",
+    description:
+      "Linguaggio di programmazione orientato agli oggetti utilizzato per lo sviluppo di applicazioni enterprise e Android.",
+  },
+  {
+    name: "Matlab",
+    description:
+      "Piattaforma per l'analisi numerica e il calcolo scientifico, utilizzato per la modellazione matematica e la simulazione.",
+  },
+  {
+    name: "MIPS",
+    description:
+      "Architettura di processori RISC utilizzata nell'insegnamento dei principi di architettura dei computer.",
+  },
+  {
+    name: "Python",
+    description:
+      "Linguaggio di programmazione versatile utilizzato per lo sviluppo web, l'analisi dati, l'automazione e l'intelligenza artificiale.",
+  },
+  {
+    name: "SQL",
+    description:
+      "Linguaggio standard per la gestione e l'interrogazione di database relazionali.",
+  },
+  {
+    name: "Simulink",
+    description:
+      "Ambiente grafico di modellazione e simulazione integrato in MATLAB.",
+  },
+  {
+    name: "Verilog",
+    description:
+      "Linguaggio di descrizione hardware (HDL) usato per modellare circuiti digitali.",
+  },
+  {
+    name: "Wireshark",
+    description:
+      "Analizzatore di protocollo di rete per l'ispezione e la risoluzione dei problemi di comunicazione di rete.",
+  },
+];
+
+const sortedSkills = skills.sort((a, b) => a.name.localeCompare(b.name));
+
 const TimelineItem = ({
   year,
   title,
@@ -171,60 +241,14 @@ const Resume = () => {
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             <div>
-              <SkillItem
-                name="Wireshark"
-                description="Analizzatore di protocollo di rete per l'ispezione e la risoluzione dei problemi di comunicazione di rete."
-              />
-              <SkillItem
-                name="Matlab"
-                description="Piattaforma per l'analisi numerica e il calcolo scientifico, utilizzato per la modellazione matematica e la simulazione."
-              />
-              <SkillItem
-                name="Bash"
-                description="Shell e linguaggio di scripting per l'automazione e il controllo dei sistemi operativi Unix/Linux."
-              />
-              <SkillItem
-                name="Python"
-                description="Linguaggio di programmazione versatile utilizzato per lo sviluppo web, l'analisi dati, l'automazione e l'intelligenza artificiale."
-              />
-              <SkillItem
-                name="Git"
-                description="Sistema di controllo di versione distribuito per tracciare le modifiche nel codice sorgente durante lo sviluppo software."
-              />
-              <SkillItem
-                name="HTML"
-                description="Linguaggio di markup per la creazione di pagine web e applicazioni."
-              />
+              {sortedSkills.slice(0, Math.ceil(sortedSkills.length / 2)).map((skill) => (
+                <SkillItem key={skill.name} name={skill.name} description={skill.description} />
+              ))}
             </div>
             <div>
-              <SkillItem
-                name="SQL"
-                description="Linguaggio standard per la gestione e l'interrogazione di database relazionali."
-              />
-              <SkillItem
-                name="MIPS"
-                description="Architettura di processori RISC utilizzata nell'insegnamento dei principi di architettura dei computer."
-              />
-              <SkillItem
-                name="C"
-                description="Linguaggio di programmazione di basso livello utilizzato per lo sviluppo di sistemi operativi e applicazioni ad alte prestazioni."
-              />
-              <SkillItem
-                name="Java"
-                description="Linguaggio di programmazione orientato agli oggetti utilizzato per lo sviluppo di applicazioni enterprise e Android."
-              />
-              <SkillItem
-                name="Arduino"
-                description="Sviluppo di applicazioni interattive che controllano dispositivi elettronici attraverso codice."
-              />
-              <SkillItem
-                name="Verilog"
-                description="Linguaggio di descrizione hardware (HDL) usato per modellare circuiti digitali."
-              />
-              <SkillItem
-                name="Simulink"
-                description="Ambiente grafico di modellazione e simulazione integrato in MATLAB."
-              />
+              {sortedSkills.slice(Math.ceil(sortedSkills.length / 2)).map((skill) => (
+                <SkillItem key={skill.name} name={skill.name} description={skill.description} />
+              ))}
             </div>
           </div>
         </div>
