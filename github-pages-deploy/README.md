@@ -21,7 +21,7 @@ Il sito sarà disponibile all'indirizzo: `https://alessio1304.github.io/info.git
    cd info.github.io
    # Copia tutti i file da github-pages-deploy/ qui
    git add .
-   git commit -m "Deploy portfolio website - versione finale"
+   git commit -m "Deploy portfolio website - versione finale aggiornata"
    git push origin main
    ```
 
@@ -38,8 +38,7 @@ Il sito sarà disponibile all'indirizzo: `https://alessio1304.github.io/info.git
 - `index.html`: Pagina principale con percorsi relativi per GitHub Pages
 - `404.html`: Gestisce le route per SPA (Single Page Application)
 - `assets/`: Cartella con tutti i file ottimizzati
-  - `IMG_9754-D2Y27lE3.jpeg`: Immagine profilo di Alessio (1.8MB ottimizzata)
-  - `index-Ckdwd-iC.js`: JavaScript bundle ottimizzato (343KB)
+  - `index-BbkhlCcQ.js`: JavaScript bundle ottimizzato (343KB)
   - `index-BSTQ0X5z.css`: CSS styles ottimizzati (68KB)
 - `.nojekyll`: Impedisce a Jekyll di processare i file
 - `README.md`: Questo file con le istruzioni
@@ -50,15 +49,15 @@ Il sito sarà disponibile all'indirizzo: `https://alessio1304.github.io/info.git
 ✅ **Percorso base configurato** per `/info.github.io/`  
 ✅ **Percorsi relativi** per tutte le risorse (./assets/)  
 ✅ **Navigazione smooth scroll** implementata  
-✅ **Immagine profilo integrata** correttamente  
 ✅ **File ottimizzati** con hash per evitare problemi di cache  
 ✅ **Icone social aggiornate** (X al posto di Twitter)  
 ✅ **Competenze professionali** riordinate alfabeticamente  
+✅ **Hero section aggiornata** con le ultime modifiche
 
 ## Cosa è incluso
 
 - Portfolio personale responsive
-- Sezione "Chi Sono" con immagine profilo
+- Sezione "Chi Sono" completa
 - Sezione "Curriculum" professionale
 - Sezione "Contatti" con form e social links
 - Navigazione smooth tra sezioni
