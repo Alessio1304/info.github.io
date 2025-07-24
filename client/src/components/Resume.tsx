@@ -123,8 +123,8 @@ const Resume = () => {
     // Create a link element
     const link = document.createElement("a");
     // Set link properties for CV file (must be in the public folder for GitHub Pages)
-    link.href = "./CV_Alessio_Sorrentino.pdf";
-    link.download = "CV_Alessio_Sorrentino.pdf";
+    link.href = "https://github.com/Alessio1304/Components/blob/main/Alessio_Sorrentino_CV.pdf?raw=true";
+    link.download = "https://github.com/Alessio1304/Components/blob/main/Alessio_Sorrentino_CV.pdf?raw=true";
     // Append to the document
     document.body.appendChild(link);
     // Trigger the download

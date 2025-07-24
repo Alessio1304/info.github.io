@@ -45,8 +45,8 @@ const Header = () => {
     const basePath = import.meta.env.BASE_URL || '/';
     // Ensure we have a clean base path that doesn't end with a slash if we're adding one
     const cleanBasePath = basePath.endsWith('/') ? basePath.slice(0, -1) : basePath;
-    link.href = `${cleanBasePath}/CV_Alessio_Sorrentino.pdf`;
-    link.download = 'CV_Alessio_Sorrentino.pdf';
+    link.href = "https://github.com/Alessio1304/Components/blob/main/Alessio_Sorrentino_CV.pdf?raw=true";
+    link.download = "https://github.com/Alessio1304/Components/blob/main/Alessio_Sorrentino_CV.pdf?raw=true";
     // Append to the document
     document.body.appendChild(link);
     // Trigger the download

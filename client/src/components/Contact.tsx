@@ -108,7 +108,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="text-base font-medium">Località</h4>
-                      <p className="text-muted-foreground">Torino, Italia</p>
+                      <p className="text-muted-foreground">Torino & Roma, Italia</p>
                     </div>
                   </div>
 
@@ -119,7 +119,7 @@ const Contact = () => {
                     <div>
                       <h4 className="text-base font-medium">Email</h4>
                       <p className="text-muted-foreground">
-                        alessiosor1304@gmail.com
+                        alessio.sor.1304@icloud.com
                       </p>
                     </div>
                   </div>
@@ -130,7 +130,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="text-base font-medium">Telefono</h4>
-                      <p className="text-muted-foreground">-</p>
+                      <p className="text-muted-foreground">+39 3278926223</p>
                     </div>
                   </div>
                 </div>
@@ -159,7 +159,7 @@ const Contact = () => {
                       <Linkedin className="h-6 w-6" />
                     </a>
                     <a
-                      href="https://twitter.com"
+                      href="https://x.com/Alessio83463385"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="bg-muted h-12 w-12 rounded-full flex items-center justify-center hover:bg-white hover:text-white transition-all duration-300 transform hover:scale-110"

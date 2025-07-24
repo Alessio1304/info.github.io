@@ -31,9 +31,9 @@ const About = () => {
 
   const personalInfo = [
     { label: "Nome e Cognome:", value: "Alessio Sorrentino" },
-    { label: "Email:", value: "alessiosor1304@gmail.com" },
-    { label: "Località:", value: "Torino, Italia" },
-    { label: "Social:", value: "Instagram, LinkedIn, Facebook, Twitter" },
+    { label: "Email:", value: "alessio.sor.1304@icloud.com" },
+    { label: "Località:", value: "Torino & Roma, Italia" },
+    { label: "Social:", value: "Instagram, LinkedIn, Facebook, X" },
   ];
 
   return (
