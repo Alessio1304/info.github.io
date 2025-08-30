@@ -183,16 +183,22 @@ const Resume = () => {
                 description="Competenze tecniche nell'assemblaggio, manutenzione e aggiornamento di PC, installazione e gestione di sistemi operativi (Windows, Mac, Linux) e configurazione di reti, dispositivi mobili e stampanti. Esperienza nell'uso sicuro degli strumenti, nel troubleshooting avanzato e nell'implementazione di misure di sicurezza IT."
               />
               <TimelineItem
+                year="2024"
+                title="IELTS - Certificazione di Inglese"
+                organization="British Council"
+                description="conoscenza intermedia-superiore della lingua inglese, corrispondente al livello B2 del Quadro Comune Europeo di Riferimento per le Lingue (CEFR)"
+              />
+              <TimelineItem
                 year="2022 - 2025"
                 title="Laurea con lode in Ingegneria Informatica"
                 organization="Politecnico di Torino"
                 description="Il corso di laurea triennale in Ingegneria Informatica del Politecnico di Torino forma professionisti capaci di gestire sistemi digitali complessi, con solide basi in matematica, fisica e informatica, e competenze specifiche in architettura dei calcolatori, programmazione, basi di dati e reti di calcolatori."
               />
               <TimelineItem
-                year="2024"
-                title="IELTS - Certificazione di Inglese"
-                organization="British Council"
-                description="conoscenza intermedia-superiore della lingua inglese, corrispondente al livello B2 del Quadro Comune Europeo di Riferimento per le Lingue (CEFR)"
+                year="2025 - "
+                title="Corso di Specializzazione in Automation and Intelligent Cyber-Physical Systems"
+                organization="Politecnico di Torino"
+                description="Ci si occupa di approfondire gli aspetti legati al progetto nonché all'analisi teorica e sperimentale di modelli mediante predizione, controllo e diagnostica dei meccanismi interni. Ci si occupa inoltre di aspetti legati alla logistica e al governo della mobilità di veicoli, persone e cose, con attenzione tanto al dominio applicativo quanto agli aspetti di automazione e di gestione di base."
               />
             </div>
           </div>
