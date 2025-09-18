@@ -236,6 +236,12 @@ const Resume = () => {
                 organization="Politecnico di Torino"
                 description="Varie attività di laboratorio svolte in team, mirate ad approfondire le materie studiate."
               />
+              <TimelineItem
+                year="2025 - "
+                title="Collaborazione part-time : Corso di Informatica"
+                organization="Politecnico di Torino"
+                description="Assistere gli studenti durante le esercitazioni e le prove ed esperienze di laboratorio, assistere gli studenti in apposite ore di ricevimento e/o correggere esercizi da essi svolti; effettuare assistenza/vigilanza durante lo svolgimento degli esami scritti."
+              />
             </div>
           </div>
         </div>

@@ -27,6 +27,12 @@ const About = () => {
       description:
         "Ottima conoscenza e padronanza sia teorica che pratica di molteplici aspetti di basso livello.",
     },
+    {
+      icon: <Network className="h-6 w-6" />,
+      title: "Automazione",
+      description:
+        "Concetti e metodi per analizzare, modellare e progettare sistemi dinamici LTI, con enfasi su feedback, stabilità, risposta, sintesi del controllore, robustezza e prestazioni in regime e transitorio.",
+    },
   ];
 
   const personalInfo = [
