@@ -38,7 +38,7 @@ Il sito sarà disponibile all'indirizzo: `https://alessio1304.github.io/info.git
 - `index.html`: Pagina principale con percorsi relativi per GitHub Pages
 - `404.html`: Gestisce le route per SPA (Single Page Application)
 - `assets/`: Cartella con tutti i file ottimizzati
-  - `index-D5IxlgKP.js`: JavaScript bundle ottimizzato (343KB)
+  - `index-BUmE7eYh.js`: JavaScript bundle ottimizzato (344KB)
   - `index-BSTQ0X5z.css`: CSS styles ottimizzati (68KB)
 - `.nojekyll`: Impedisce a Jekyll di processare i file
 - `README.md`: Questo file con le istruzioni
