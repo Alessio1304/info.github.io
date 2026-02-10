@@ -73,7 +73,35 @@ const skills = [
     name: "Wireshark",
     description:
       "Analizzatore di protocollo di rete per l'ispezione e la risoluzione dei problemi di comunicazione di rete.",
-  },
+  },{
+    name: "RISC-V assembly",
+    description:
+      "Sviluppo e ottimizzazione di codice a basso livello per il controllo hardware diretto e la massimizzazione delle prestazioni su processori basati su architettura RISC-V.",
+  }, {
+    name: "ARM Cortex M3",
+    description:
+      "Core a 32-bit ottimizzato per sistemi embedded, il Cortex-M3 unisce potenza di calcolo ed efficienza energetica. È ideale per gestire task di controllo in tempo reale garantendo una latenza minima e un'elevata densità di codice.",
+  }, {
+    name: " MongoDB Query Language (MQL)",
+    description:
+      "Esperienza nell'utilizzo di MQL per la gestione di database orientati ai documenti. Competente nell'esecuzione di operazioni CRUD, nell'utilizzo di operatori di query avanzati e nella manipolazione di dati JSON-like (BSON) per garantire alte prestazioni e scalabilità.",
+  }, {
+    name: "RESTful API Design",
+    description:
+      "Esperienza nello sviluppo e nel consumo di API RESTful, con focus sull'utilizzo dei metodi HTTP standard (GET, POST, PUT, DELETE), gestione dei codici di stato e formattazione dei dati in JSON per l'interscambio tra client e server.",
+  }, {
+    name: "JSON Data Interchange",
+    description:
+      "Competenza nell'utilizzo del formato JSON per la strutturazione, la serializzazione e il parsing dei dati. Esperienza nella gestione di oggetti complessi e array per lo scambio di informazioni tra client e server in applicazioni web e mobile.",
+  }, {
+    name: "Streamlit (Python Framework)",
+    description:
+      "Esperienza nello sviluppo di web application interattive e dashboard per la visualizzazione dei dati. Capacità di trasformare script Python in strumenti web-based pronti per l'uso, con focus sulla rapidità di prototipazione e sulla user experience.",
+  }, {
+    name: "MQTT (IoT Messaging Protocol)",
+    description:
+      "Competenza nell'utilizzo del protocollo MQTT per la comunicazione leggera e a bassa latenza tra dispositivi IoT. Esperienza nell'implementazione dell'architettura Publish/Subscribe per il monitoraggio e il controllo remoto di sensori e attuatori.",
+  }
 ];
 
 const sortedSkills = skills.sort((a, b) => a.name.localeCompare(b.name));
@@ -235,6 +263,26 @@ const Resume = () => {
                 title="Attività di laboratorio"
                 organization="Politecnico di Torino"
                 description="Varie attività di laboratorio svolte in team, mirate ad approfondire le materie studiate."
+              />
+              <TimelineItem
+                year="2025"
+                title="IoT & Smart Home Automation Developer | Progetto Full-Stack
+"
+                organization="Politecnico di Torino"
+                description="Ho ingegnerizzato un sistema di automazione domestica distribuito, focalizzandomi sull'interoperabilità tra diverse tecnologie e protocolli (MQTT, HTTP). Ho sviluppato un backend scalabile con CherryPy per la gestione dinamica di utenti e risorse, integrando nodi Arduino per il monitoraggio ambientale avanzato. Il progetto si distingue per l'implementazione di algoritmi di automazione contestuale: il sistema analizza autonomamente i livelli di rumore e movimento per ottimizzare il funzionamento di luci e ventilazione, garantendo un controllo granulare sia tramite interfacce CLI in Python che tramite feedback fisico su display LCD."
+              />
+              <TimelineItem
+                year="2025"
+                title="Analisi Spettrale e Progettazione di Filtri Digitali (MATLAB)"
+                organization="Politecnico di Torino"
+                description="Ho sviluppato in MATLAB un sistema di elaborazione digitale dei segnali per l’analisi spettrale e il filtraggio audio. Ho implementato algoritmi per il calcolo della FFT e progettato filtri FIR passa-basso e passa-alto (basati su funzione sinc e delta di Dirac), validandone le prestazioni tramite il calcolo della funzione di trasferimento. Il sistema è stato ottimizzato e testato sia su tracce audio reali che su rumore bianco gaussiano per garantire l'accuratezza della risposta in frequenza e l'efficacia dell'attenuazione."
+              />
+              <TimelineItem
+                year="2025"
+                title="Sviluppo del Motore Analitico e Persistenza per un simulatore avanzato di Conway’s Game of Life (Java & JPA)
+"
+                organization="Politecnico di Torino"
+                description="In questo progetto ho progettato e implementato il modulo Board, il cuore strutturale di una versione estesa del Game of Life. Mi sono occupato della gestione della griglia e dell'interazione dinamica tra le celle e l'ambiente, implementando sistemi di calcolo per i modificatori energetici e i 'life points'. Un aspetto centrale del mio lavoro è stato lo sviluppo di un robusto motore analitico capace di estrarre statistiche in tempo reale e serie temporali sull'evoluzione della simulazione, utilizzando le Stream API di Java. Ho inoltre gestito l'intero layer di persistenza tramite JPA/Hibernate, mappando relazioni complesse tra entità e garantendo il salvataggio e il ripristino dello stato completo della board su database H2."
               />
               <TimelineItem
                 year="2025 - "
