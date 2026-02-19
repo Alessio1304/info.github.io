@@ -82,7 +82,7 @@ const skills = [
     description:
       "Core a 32-bit ottimizzato per sistemi embedded, il Cortex-M3 unisce potenza di calcolo ed efficienza energetica. È ideale per gestire task di controllo in tempo reale garantendo una latenza minima e un'elevata densità di codice.",
   }, {
-    name: " MongoDB Query Language (MQL)",
+    name: "MongoDB Query Language (MQL)",
     description:
       "Esperienza nell'utilizzo di MQL per la gestione di database orientati ai documenti. Competente nell'esecuzione di operazioni CRUD, nell'utilizzo di operatori di query avanzati e nella manipolazione di dati JSON-like (BSON) per garantire alte prestazioni e scalabilità.",
   }, {
@@ -285,10 +285,16 @@ const Resume = () => {
                 description="In questo progetto ho progettato e implementato il modulo Board, il cuore strutturale di una versione estesa del Game of Life. Mi sono occupato della gestione della griglia e dell'interazione dinamica tra le celle e l'ambiente, implementando sistemi di calcolo per i modificatori energetici e i 'life points'. Un aspetto centrale del mio lavoro è stato lo sviluppo di un robusto motore analitico capace di estrarre statistiche in tempo reale e serie temporali sull'evoluzione della simulazione, utilizzando le Stream API di Java. Ho inoltre gestito l'intero layer di persistenza tramite JPA/Hibernate, mappando relazioni complesse tra entità e garantendo il salvataggio e il ripristino dello stato completo della board su database H2."
               />
               <TimelineItem
-                year="2025 - "
+                year="2025"
                 title="Collaborazione part-time : Corso di Informatica"
                 organization="Politecnico di Torino"
                 description="Assistere gli studenti durante le esercitazioni e le prove ed esperienze di laboratorio, assistere gli studenti in apposite ore di ricevimento e/o correggere esercizi da essi svolti; effettuare assistenza/vigilanza durante lo svolgimento degli esami scritti."
+              />
+              <TimelineItem
+                year="2025"
+                title="Embedded Systems & Real-Time Control: ARM Cortex-M3"
+                organization="Politecnico di Torino"
+                description="Ho sviluppato, per il corso di Architetture e Sistemi di Elaborazione, un sistema real-time basato su ARM Cortex-M3 che esegue una versione avanzata di Tetris su scheda LandTiger (LPC1768). Ho integrato il controllo della velocità tramite segnali analogici (ADC) e la riproduzione audio via hardware, implementando algoritmi ottimizzati per la gestione di collisioni, power-up e malus dinamici. Il progetto, realizzato in C con Keil IDE, dimostra la mia abilità nel far dialogare algoritmi software complessi con hardware fisico in contesti a risorse limitate."
               />
             </div>
           </div>
