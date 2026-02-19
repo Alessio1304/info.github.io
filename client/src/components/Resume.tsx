@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { FileDown } from "lucide-react";
+import { FileDown, Cpu } from "lucide-react";
 
 interface TimelineItemProps {
   year: string;
@@ -295,26 +295,31 @@ const Resume = () => {
         </div>
 
         {/* Competenze */}
-        <div className="mt-20">
-          <h3 className="text-2xl font-semibold mb-8 text-center">
-            Competenze Professionali
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div>
-              {sortedSkills.slice(0, Math.ceil(sortedSkills.length / 2)).map((skill) => (
-                <SkillItem key={skill.name} name={skill.name} description={skill.description} />
-              ))}
-            </div>
-            <div>
-              {sortedSkills.slice(Math.ceil(sortedSkills.length / 2)).map((skill) => (
-                <SkillItem key={skill.name} name={skill.name} description={skill.description} />
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
+                <div className="mt-20">
+                  <h3 className="text-2xl font-semibold mb-8 flex items-center justify-center">
+                    {/* Badge stilizzato come gli altri nel tuo CV */}
+                    <span className="bg-primary/10 text-primary p-2 rounded-md mr-3">
+                      <Cpu className="w-5 h-5" />
+                    </span>
+                    Competenze Professionali
+                  </h3>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div>
+                      {sortedSkills.slice(0, Math.ceil(sortedSkills.length / 2)).map((skill) => (
+                        <SkillItem key={skill.name} name={skill.name} description={skill.description} />
+                      ))}
+                    </div>
+                    <div>
+                      {sortedSkills.slice(Math.ceil(sortedSkills.length / 2)).map((skill) => (
+                        <SkillItem key={skill.name} name={skill.name} description={skill.description} />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          );
+        };
 
 export default Resume;

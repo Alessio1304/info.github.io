@@ -53,22 +53,10 @@ const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
             <h3 className="text-2xl font-semibold mb-4">
-              Un appassionato di tecnologia e spazio
+              Ingegneria, Automazione e Visione
             </h3>
             <p className="text-muted-foreground mb-6">
-              Ciao! sono Alessio Sorrentino, sono nato nell'aprile del 2003 e
-              fin da piccolo ho avuto una passione per la tecnologia. Nel tempo
-              ho fatto diverse esperienze lavorative e ho acquisito diverse
-              competenze che mi hanno permesso di crescere come persona e
-              professionista nel mondo del lavoro.
-            </p>
-            <p className="text-muted-foreground mb-6">
-              Credo fortemente in me stesso e nelle mie capacità: so di avere
-              solide basi, ma so anche che c’è sempre spazio per migliorare.
-              Penso che le sfide vadano affrontate con determinazione, visione e
-              spirito di squadra. Sono pronto a dare il massimo, a mettermi in
-              gioco ogni giorno e ad apprendere tutto ciò che serve per
-              crescere, sia come professionista che come persona.
+              Ingegnere, problem solver e sognatore quanto basta. Dopo una laurea al Politecnico di Torino con il massimo dei voti, ho scelto di specializzarmi in Automation e Cyber-Physical Systems perché credo che il futuro sia nell'integrazione perfetta tra hardware e software. Il mio approccio? Guardare oltre lo schermo: che si tratti di ottimizzare una casa intelligente o di progettare sistemi complessi, il mio obiettivo è sempre l'efficienza e l'affidabilità. Punto in alto — realtà come NASA ed ESA sono il mio riferimento per standard di qualità — ma sono sempre aperto a nuove sfide tecnologiche che richiedano rigore analitico e spirito d'iniziativa.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
               {personalInfo.map((info, index) => (
