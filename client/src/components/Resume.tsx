@@ -73,35 +73,47 @@ const skills = [
     name: "Wireshark",
     description:
       "Analizzatore di protocollo di rete per l'ispezione e la risoluzione dei problemi di comunicazione di rete.",
-  },{
+  },
+  {
     name: "RISC-V assembly",
     description:
       "Sviluppo e ottimizzazione di codice a basso livello per il controllo hardware diretto e la massimizzazione delle prestazioni su processori basati su architettura RISC-V.",
-  }, {
+  },
+  {
     name: "ARM Cortex M3",
     description:
       "Core a 32-bit ottimizzato per sistemi embedded, il Cortex-M3 unisce potenza di calcolo ed efficienza energetica. È ideale per gestire task di controllo in tempo reale garantendo una latenza minima e un'elevata densità di codice.",
-  }, {
+  },
+  {
     name: "MongoDB Query Language (MQL)",
     description:
       "Esperienza nell'utilizzo di MQL per la gestione di database orientati ai documenti. Competente nell'esecuzione di operazioni CRUD, nell'utilizzo di operatori di query avanzati e nella manipolazione di dati JSON-like (BSON) per garantire alte prestazioni e scalabilità.",
-  }, {
+  },
+  {
     name: "RESTful API Design",
     description:
       "Esperienza nello sviluppo e nel consumo di API RESTful, con focus sull'utilizzo dei metodi HTTP standard (GET, POST, PUT, DELETE), gestione dei codici di stato e formattazione dei dati in JSON per l'interscambio tra client e server.",
-  }, {
+  },
+  {
     name: "JSON Data Interchange",
     description:
       "Competenza nell'utilizzo del formato JSON per la strutturazione, la serializzazione e il parsing dei dati. Esperienza nella gestione di oggetti complessi e array per lo scambio di informazioni tra client e server in applicazioni web e mobile.",
-  }, {
+  },
+  {
     name: "Streamlit (Python Framework)",
     description:
       "Esperienza nello sviluppo di web application interattive e dashboard per la visualizzazione dei dati. Capacità di trasformare script Python in strumenti web-based pronti per l'uso, con focus sulla rapidità di prototipazione e sulla user experience.",
-  }, {
+  },
+  {
     name: "MQTT (IoT Messaging Protocol)",
     description:
       "Competenza nell'utilizzo del protocollo MQTT per la comunicazione leggera e a bassa latenza tra dispositivi IoT. Esperienza nell'implementazione dell'architettura Publish/Subscribe per il monitoraggio e il controllo remoto di sensori e attuatori.",
-  }
+  },
+  {
+    name: "Rust",
+    description:
+      "Linguaggio di sistema ad alte prestazioni focalizzato sulla sicurezza della memoria e sulla concorrenza, senza l'utilizzo di un garbage collector.",
+  },
 ];
 
 const sortedSkills = skills.sort((a, b) => a.name.localeCompare(b.name));
@@ -148,16 +160,22 @@ const SkillItem = ({ name, description }: SkillItemProps) => {
 const Resume = () => {
   // Function to download CV
   const downloadCV = () => {
-    // Create a link element
+    // URL diretto al file (raw) e codificato correttamente per gli spazi
+    const cvUrl =
+      "https://github.com/Alessio1304/Components/raw/19e02a3c075218dc7f03cdda32bf53bc9fa32541/Sorrentino%20Alessio%20CV.pdf";
+
     const link = document.createElement("a");
-    // Set link properties for CV file (must be in the public folder for GitHub Pages)
-    link.href = "https://github.com/Alessio1304/Components/blob/main/Alessio_Sorrentino_CV.pdf?raw=true";
-    link.download = "https://github.com/Alessio1304/Components/blob/main/Alessio_Sorrentino_CV.pdf?raw=true";
-    // Append to the document
+    link.href = cvUrl;
+
+    // Qui inserisci il nome che il file avrà una volta scaricato
+    link.download = "Sorrentino_Alessio_CV.pdf";
+
+    // Importante per i file PDF: forza l'apertura in una nuova scheda
+    // se il browser decide di non scaricarlo immediatamente
+    link.target = "_blank";
+
     document.body.appendChild(link);
-    // Trigger the download
     link.click();
-    // Clean up
     document.body.removeChild(link);
   };
 
@@ -301,31 +319,43 @@ const Resume = () => {
         </div>
 
         {/* Competenze */}
-                <div className="mt-20">
-                  <h3 className="text-2xl font-semibold mb-8 flex items-center justify-center">
-                    {/* Badge stilizzato come gli altri nel tuo CV */}
-                    <span className="bg-primary/10 text-primary p-2 rounded-md mr-3">
-                      <Cpu className="w-5 h-5" />
-                    </span>
-                    Competenze Professionali
-                  </h3>
+        <div className="mt-20">
+          <h3 className="text-2xl font-semibold mb-8 flex items-center justify-center">
+            {/* Badge stilizzato come gli altri nel tuo CV */}
+            <span className="bg-primary/10 text-primary p-2 rounded-md mr-3">
+              <Cpu className="w-5 h-5" />
+            </span>
+            Competenze Professionali
+          </h3>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                    <div>
-                      {sortedSkills.slice(0, Math.ceil(sortedSkills.length / 2)).map((skill) => (
-                        <SkillItem key={skill.name} name={skill.name} description={skill.description} />
-                      ))}
-                    </div>
-                    <div>
-                      {sortedSkills.slice(Math.ceil(sortedSkills.length / 2)).map((skill) => (
-                        <SkillItem key={skill.name} name={skill.name} description={skill.description} />
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-          );
-        };
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div>
+              {sortedSkills
+                .slice(0, Math.ceil(sortedSkills.length / 2))
+                .map((skill) => (
+                  <SkillItem
+                    key={skill.name}
+                    name={skill.name}
+                    description={skill.description}
+                  />
+                ))}
+            </div>
+            <div>
+              {sortedSkills
+                .slice(Math.ceil(sortedSkills.length / 2))
+                .map((skill) => (
+                  <SkillItem
+                    key={skill.name}
+                    name={skill.name}
+                    description={skill.description}
+                  />
+                ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 export default Resume;

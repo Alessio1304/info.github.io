@@ -108,7 +108,9 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="text-base font-medium">Località</h4>
-                      <p className="text-muted-foreground">Torino & Roma, Italia</p>
+                      <p className="text-muted-foreground">
+                        Torino & Roma, Italia
+                      </p>
                     </div>
                   </div>
 
@@ -130,7 +132,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="text-base font-medium">Telefono</h4>
-                      <p className="text-muted-foreground"> -</p>
+                      <p className="text-muted-foreground"> +39 3278926223</p>
                     </div>
                   </div>
                 </div>

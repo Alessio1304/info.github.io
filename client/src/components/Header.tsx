@@ -16,7 +16,7 @@ const Header = () => {
 
       window.scrollTo({
         top: offsetPosition,
-        behavior: "smooth"
+        behavior: "smooth",
       });
     }
     setIsMobileMenuOpen(false);
@@ -39,19 +39,22 @@ const Header = () => {
 
   // Function to download CV
   const downloadCV = () => {
-    // Create a link element
-    const link = document.createElement('a');
-    // Set link properties for CV file with the correct base path for GitHub Pages
-    const basePath = import.meta.env.BASE_URL || '/';
-    // Ensure we have a clean base path that doesn't end with a slash if we're adding one
-    const cleanBasePath = basePath.endsWith('/') ? basePath.slice(0, -1) : basePath;
-    link.href = "https://github.com/Alessio1304/Components/blob/main/Alessio_Sorrentino_CV.pdf?raw=true";
-    link.download = "https://github.com/Alessio1304/Components/blob/main/Alessio_Sorrentino_CV.pdf?raw=true";
-    // Append to the document
+    // URL diretto al file (raw) e codificato correttamente per gli spazi
+    const cvUrl =
+      "https://github.com/Alessio1304/Components/raw/19e02a3c075218dc7f03cdda32bf53bc9fa32541/Sorrentino%20Alessio%20CV.pdf";
+
+    const link = document.createElement("a");
+    link.href = cvUrl;
+
+    // Qui inserisci il nome che il file avrà una volta scaricato
+    link.download = "Sorrentino_Alessio_CV.pdf";
+
+    // Importante per i file PDF: forza l'apertura in una nuova scheda
+    // se il browser decide di non scaricarlo immediatamente
+    link.target = "_blank";
+
     document.body.appendChild(link);
-    // Trigger the download
     link.click();
-    // Clean up
     document.body.removeChild(link);
   };
 
@@ -67,24 +70,27 @@ const Header = () => {
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-3">
             <Avatar className="h-10 w-10 border-2 border-primary shadow-md transition-all duration-300 hover:scale-110">
-              <AvatarImage src="https://ui-avatars.com/api/?name=AS&color=ffffff&background=0f766e" alt="Alessio Sorrentino" />
+              <AvatarImage
+                src="https://ui-avatars.com/api/?name=AS&color=ffffff&background=0f766e"
+                alt="Alessio Sorrentino"
+              />
               <AvatarFallback>AS</AvatarFallback>
             </Avatar>
             <div>
               <h1 className="font-semibold text-xl">Alessio Sorrentino</h1>
               <div className="flex items-center mt-1 space-x-2">
-                <a 
-                  href="https://www.instagram.com/alessio_sorrentino_/" 
-                  target="_blank" 
+                <a
+                  href="https://www.instagram.com/alessio_sorrentino_/"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-[#E1306C] transition-colors"
                   aria-label="Instagram"
                 >
                   <Instagram className="h-4 w-4" />
                 </a>
-                <a 
-                  href="https://it.linkedin.com/in/alessio-sorrentino-005b43274" 
-                  target="_blank" 
+                <a
+                  href="https://it.linkedin.com/in/alessio-sorrentino-005b43274"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-[#0077B5] transition-colors"
                   aria-label="LinkedIn"
@@ -115,7 +121,11 @@ const Header = () => {
             >
               Contatti
             </button>
-            <Button onClick={downloadCV} size="sm" className="gap-2 shadow-sm transition-transform duration-300 hover:shadow-md hover:translate-y-[-2px]">
+            <Button
+              onClick={downloadCV}
+              size="sm"
+              className="gap-2 shadow-sm transition-transform duration-300 hover:shadow-md hover:translate-y-[-2px]"
+            >
               <FileDown className="h-4 w-4" /> CV
             </Button>
           </nav>
@@ -139,8 +149,11 @@ const Header = () => {
       {isMobileMenuOpen && (
         <div className="fixed top-0 left-0 right-0 bottom-0 md:hidden z-50">
           {/* Overlay scuro semi-trasparente */}
-          <div className="absolute inset-0 bg-black/30 backdrop-blur-sm" onClick={() => setIsMobileMenuOpen(false)}></div>
-          
+          <div
+            className="absolute inset-0 bg-black/30 backdrop-blur-sm"
+            onClick={() => setIsMobileMenuOpen(false)}
+          ></div>
+
           {/* Menu mobile */}
           <div className="absolute top-0 left-0 right-0 bg-background shadow-lg">
             <div className="container mx-auto px-4">
@@ -148,14 +161,19 @@ const Header = () => {
               <div className="flex justify-between items-center py-5">
                 <div className="flex items-center gap-3">
                   <Avatar className="h-10 w-10 border-2 border-primary shadow-md">
-                    <AvatarImage src="https://ui-avatars.com/api/?name=AS&color=ffffff&background=0f766e" alt="Alessio Sorrentino" />
+                    <AvatarImage
+                      src="https://ui-avatars.com/api/?name=AS&color=ffffff&background=0f766e"
+                      alt="Alessio Sorrentino"
+                    />
                     <AvatarFallback>AS</AvatarFallback>
                   </Avatar>
                   <div>
-                    <h1 className="font-semibold text-xl">Alessio Sorrentino</h1>
+                    <h1 className="font-semibold text-xl">
+                      Alessio Sorrentino
+                    </h1>
                   </div>
                 </div>
-                
+
                 {/* Pulsante per chiudere */}
                 <button
                   className="focus:outline-none"
@@ -166,7 +184,7 @@ const Header = () => {
                 </button>
               </div>
             </div>
-            
+
             {/* Contenuto del menu */}
             <div className="border-t py-6 px-4">
               <div className="container mx-auto">
@@ -190,16 +208,38 @@ const Header = () => {
                     Contatti
                   </button>
                   <div className="flex gap-3 mt-4">
-                    <Button onClick={downloadCV} className="gap-2 flex-1" size="sm">
+                    <Button
+                      onClick={downloadCV}
+                      className="gap-2 flex-1"
+                      size="sm"
+                    >
                       <FileDown className="h-4 w-4" /> CV
                     </Button>
-                    <Button variant="outline" size="icon" asChild className="h-9 w-9">
-                      <a href="https://www.instagram.com/alessio_sorrentino_/" target="_blank" rel="noopener noreferrer">
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      asChild
+                      className="h-9 w-9"
+                    >
+                      <a
+                        href="https://www.instagram.com/alessio_sorrentino_/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <Instagram className="h-4 w-4" />
                       </a>
                     </Button>
-                    <Button variant="outline" size="icon" asChild className="h-9 w-9">
-                      <a href="https://it.linkedin.com/in/alessio-sorrentino-005b43274" target="_blank" rel="noopener noreferrer">
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      asChild
+                      className="h-9 w-9"
+                    >
+                      <a
+                        href="https://it.linkedin.com/in/alessio-sorrentino-005b43274"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <Linkedin className="h-4 w-4" />
                       </a>
                     </Button>

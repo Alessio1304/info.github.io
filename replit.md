@@ -24,6 +24,12 @@ Repository per il sito personale di Alessio Sorrentino contenente curriculum, bl
 
 ## Recent Changes
 
+### 2026-04-28 - Build finale rigenerata
+- ✅ Build rigenerata con JavaScript bundle ottimizzato (index-BqueyudV.js - 349KB)
+- ✅ CSS styles ottimizzati (index-BSTQ0X5z.css - 68KB)
+- ✅ Percorsi relativi configurati per GitHub Pages (./assets/)
+- ✅ File completo pronto per push diretto su repository
+
 ### 2024-08-30 - Build finale aggiornata con Resume rinnovato
 - ✅ Build aggiornata con ampie modifiche al componente Resume
 - ✅ JavaScript bundle ottimizzato (index-D5IxlgKP.js - 343KB)
