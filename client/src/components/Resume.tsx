@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { FileDown, Cpu } from "lucide-react";
+import { FileDown, Cpu, Code } from "lucide-react";
 
 interface TimelineItemProps {
   year: string;
@@ -232,7 +232,7 @@ const Resume = () => {
                 year="2024"
                 title="IELTS - Certificazione di Inglese"
                 organization="British Council"
-                description="conoscenza intermedia-superiore della lingua inglese, corrispondente al livello B2 del Quadro Comune Europeo di Riferimento per le Lingue (CEFR)"
+                description="Conoscenza intermedia-superiore della lingua inglese, corrispondente al livello B2 del Quadro Comune Europeo di Riferimento per le Lingue (CEFR)."
               />
               <TimelineItem
                 year="2022 - 2025"
@@ -241,7 +241,7 @@ const Resume = () => {
                 description="Il corso di laurea triennale in Ingegneria Informatica del Politecnico di Torino forma professionisti capaci di gestire sistemi digitali complessi, con solide basi in matematica, fisica e informatica, e competenze specifiche in architettura dei calcolatori, programmazione, basi di dati e reti di calcolatori."
               />
               <TimelineItem
-                year="2025 - "
+                year="2025 - Presente"
                 title="Corso di Specializzazione in Automation and Intelligent Cyber-Physical Systems"
                 organization="Politecnico di Torino"
                 description="Ci si occupa di approfondire gli aspetti legati al progetto nonché all'analisi teorica e sperimentale di modelli mediante predizione, controllo e diagnostica dei meccanismi interni. Ci si occupa inoltre di aspetti legati alla logistica e al governo della mobilità di veicoli, persone e cose, con attenzione tanto al dominio applicativo quanto agli aspetti di automazione e di gestione di base."
@@ -284,8 +284,28 @@ const Resume = () => {
               />
               <TimelineItem
                 year="2025"
-                title="IoT & Smart Home Automation Developer | Progetto Full-Stack
-"
+                title="Collaborazione part-time : Corso di Informatica"
+                organization="Politecnico di Torino"
+                description="Assistere gli studenti durante le esercitazioni e le prove ed esperienze di laboratorio, assistere gli studenti in apposite ore di ricevimento e/o correggere esercizi da essi svolti; effettuare assistenza/vigilanza durante lo svolgimento degli esami scritti."
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Progetti (Nuova sezione a tutta larghezza) */}
+        <div className="mt-20">
+          <h3 className="text-2xl font-semibold mb-12 flex items-center justify-center">
+            <span className="bg-primary/10 text-primary p-2 rounded-md mr-3">
+              <Code className="w-5 h-5" />
+            </span>
+            Progetti Sviluppati
+          </h3>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12">
+            <div>
+              <TimelineItem
+                year="2025"
+                title="IoT & Smart Home Automation Developer | Progetto Full-Stack"
                 organization="Politecnico di Torino"
                 description="Ho ingegnerizzato un sistema di automazione domestica distribuito, focalizzandomi sull'interoperabilità tra diverse tecnologie e protocolli (MQTT, HTTP). Ho sviluppato un backend scalabile con CherryPy per la gestione dinamica di utenti e risorse, integrando nodi Arduino per il monitoraggio ambientale avanzato. Il progetto si distingue per l'implementazione di algoritmi di automazione contestuale: il sistema analizza autonomamente i livelli di rumore e movimento per ottimizzare il funzionamento di luci e ventilazione, garantendo un controllo granulare sia tramite interfacce CLI in Python che tramite feedback fisico su display LCD."
               />
@@ -297,16 +317,9 @@ const Resume = () => {
               />
               <TimelineItem
                 year="2025"
-                title="Sviluppo del Motore Analitico e Persistenza per un simulatore avanzato di Conway’s Game of Life (Java & JPA)
-"
+                title="Sviluppo del Motore Analitico e Persistenza per un simulatore avanzato di Conway’s Game of Life (Java & JPA)"
                 organization="Politecnico di Torino"
                 description="In questo progetto ho progettato e implementato il modulo Board, il cuore strutturale di una versione estesa del Game of Life. Mi sono occupato della gestione della griglia e dell'interazione dinamica tra le celle e l'ambiente, implementando sistemi di calcolo per i modificatori energetici e i 'life points'. Un aspetto centrale del mio lavoro è stato lo sviluppo di un robusto motore analitico capace di estrarre statistiche in tempo reale e serie temporali sull'evoluzione della simulazione, utilizzando le Stream API di Java. Ho inoltre gestito l'intero layer di persistenza tramite JPA/Hibernate, mappando relazioni complesse tra entità e garantendo il salvataggio e il ripristino dello stato completo della board su database H2."
-              />
-              <TimelineItem
-                year="2025"
-                title="Collaborazione part-time : Corso di Informatica"
-                organization="Politecnico di Torino"
-                description="Assistere gli studenti durante le esercitazioni e le prove ed esperienze di laboratorio, assistere gli studenti in apposite ore di ricevimento e/o correggere esercizi da essi svolti; effettuare assistenza/vigilanza durante lo svolgimento degli esami scritti."
               />
               <TimelineItem
                 year="2025"
@@ -315,20 +328,40 @@ const Resume = () => {
                 description="Ho sviluppato, per il corso di Architetture e Sistemi di Elaborazione, un sistema real-time basato su ARM Cortex-M3 che esegue una versione avanzata di Tetris su scheda LandTiger (LPC1768). Ho integrato il controllo della velocità tramite segnali analogici (ADC) e la riproduzione audio via hardware, implementando algoritmi ottimizzati per la gestione di collisioni, power-up e malus dinamici. Il progetto, realizzato in C con Keil IDE, dimostra la mia abilità nel far dialogare algoritmi software complessi con hardware fisico in contesti a risorse limitate."
               />
             </div>
+
+            <div>
+              <TimelineItem
+                year="2025"
+                title="Predictive Safety & Dynamic Risk Estimation in Human-Robot Collaboration"
+                organization="Politecnico di Torino"
+                description="Questo progetto si concentra sulla sicurezza proattiva per la collaborazione uomo-robot (HRC) in ambito industriale. L'obiettivo principale è stato creare un sistema in grado non solo di rilevare la prossimità in tempo reale, ma di prevedere attivamente l'evoluzione del rischio di collisione. Utilizzando i dati cinematici 3D del dataset CHICO, abbiamo implementato un'architettura di deep learning in due fasi: una rete MLP per la valutazione istantanea e un modello LSTM per il forecasting temporale. Grazie a strategie avanzate di data augmentation e a un'ottimizzazione rigorosamente safety-first, il framework riesce ad anticipare le collisioni garantendo un intervento fail-safe. Il risultato è una soluzione robusta e proattiva, essenziale per garantire il controllo e l'affidabilità dei moderni sistemi cyber-fisici intelligenti."
+              />
+              <TimelineItem
+                year="2026"
+                title="Distributed Formation Control of Heterogeneous Nonlinear Planar Robots via Feedback Linearization"
+                organization="Politecnico di Torino"
+                description="Il lavoro affronta la sfida del controllo distribuito per una squadra di tre robot planari nonlineari eterogenei, operanti come Veicoli Autonomi di Superficie (ASV). L'obiettivo primario è stato garantire il mantenimento di una rigorosa formazione triangolare durante l'inseguimento di una traiettoria spaziale. Per superare le differenze dinamiche tra i veicoli, è stata implementata un'architettura gerarchica: un anello interno di Feedback Linearization ha compensato le nonlinearità locali trasformando il sistema in modelli lineari a doppio integratore , supportato da un osservatore di Luenberger per la stima degli stati non misurabili. Su questo impianto virtuale sono stati progettati e confrontati due protocolli di controllo cooperativo ad alto livello: uno basato su State-Feedback (tramite equazione di Riccati) e uno basato su Loop-Shaping in frequenza. L'efficacia dell'architettura è stata validata tramite simulazioni MATLAB, dimostrando un'elevata stabilità e reiezione dei disturbi anche in scenari marini severi caratterizzati da raffiche di vento, rumore dei sensori e incertezze parametriche."
+              />
+              <TimelineItem
+                year="2026"
+                title="Georuggine: Sistema Distribuito in Rust per la Geolocalizzazione di Flotte"
+                organization="Politecnico di Torino"
+                description="Progetto accademico sviluppato in Rust per la gestione, la geolocalizzazione e la comunicazione in tempo reale di una flotta di veicoli. Il sistema si basa su un'architettura distribuita client/server, sfruttando una comunicazione full-duplex tramite WebSocket per garantire il tracciamento continuo sulla mappa di Torino. Il backend asincrono, ingegnerizzato con Axum e Tokio, si interfaccia con un database SQLite per analizzare la telemetria, mentre il simulatore di movimento sfrutta un grafo stradale elaborato in Python ed è eseguito nel browser grazie a WebAssembly (WASM). Validato tramite stress-test concorrenti per garantire la minima latenza e il minimo impatto sulle risorse."
+              />
+            </div>
           </div>
         </div>
 
         {/* Competenze */}
         <div className="mt-20">
-          <h3 className="text-2xl font-semibold mb-8 flex items-center justify-center">
-            {/* Badge stilizzato come gli altri nel tuo CV */}
+          <h3 className="text-2xl font-semibold mb-12 flex items-center justify-center">
             <span className="bg-primary/10 text-primary p-2 rounded-md mr-3">
               <Cpu className="w-5 h-5" />
             </span>
             Competenze Professionali
           </h3>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12">
             <div>
               {sortedSkills
                 .slice(0, Math.ceil(sortedSkills.length / 2))
