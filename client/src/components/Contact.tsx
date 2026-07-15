@@ -25,6 +25,7 @@ import {
   Linkedin,
   Instagram,
   Facebook,
+  Github,
 } from "lucide-react";
 
 const formSchema = z.object({
@@ -85,10 +86,11 @@ const Contact = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold mb-4">Contattami</h2>
-          <div className="h-1 w-20 bg-primary mx-auto"></div>
+          <div className="h-1 w-20 bg-blue-900 mx-auto"></div>
           <p className="mt-6 text-muted-foreground max-w-xl mx-auto">
-            Sentiti libero di contattarmi per collaborazioni, domande o
-            semplicemente per fare due chiacchiere.
+            Sono sempre aperto a nuove sfide tecnologiche. Contattami per
+            discutere di opportunità professionali, collaborazioni su progetti
+            ingegneristici o per un confronto tecnico.
           </p>
         </div>
 
@@ -103,7 +105,7 @@ const Contact = () => {
 
                 <div className="space-y-6">
                   <div className="flex items-start">
-                    <div className="bg-primary/10 p-3 rounded-md text-primary mr-4">
+                    <div className="bg-blue-900/10 p-3 rounded-md text-blue-900 mr-4">
                       <MapPin className="h-5 w-5" />
                     </div>
                     <div>
@@ -115,7 +117,7 @@ const Contact = () => {
                   </div>
 
                   <div className="flex items-start">
-                    <div className="bg-primary/10 p-3 rounded-md text-primary mr-4">
+                    <div className="bg-blue-900/10 p-3 rounded-md text-blue-900 mr-4">
                       <Mail className="h-5 w-5" />
                     </div>
                     <div>
@@ -127,7 +129,7 @@ const Contact = () => {
                   </div>
 
                   <div className="flex items-start">
-                    <div className="bg-primary/10 p-3 rounded-md text-primary mr-4">
+                    <div className="bg-blue-900/10 p-3 rounded-md text-blue-900 mr-4">
                       <Phone className="h-5 w-5" />
                     </div>
                     <div>
@@ -182,12 +184,22 @@ const Contact = () => {
                     >
                       <Facebook className="h-6 w-6" />
                     </a>
+                    <a
+                      href="https://github.com/Alessio1304"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-muted h-12 w-12 rounded-full flex items-center justify-center hover:bg-gray-900 hover:text-white transition-all duration-300 transform hover:scale-110"
+                      aria-label="GitHub"
+                    >
+                      <Github className="h-6 w-6" />
+                    </a>
                   </div>
 
-                  <div className="mt-6 p-4 bg-primary/5 rounded-lg border border-primary/10">
+                  <div className="mt-6 p-4 bg-blue-900/5 rounded-lg border border-blue-900/10">
                     <p className="text-sm text-muted-foreground">
-                      Seguimi sui social per scoprire di più sulla mia vita e
-                      per entrare in contatto diretto con me.
+                      Connettiamoci. Seguimi sui social per esplorare i miei
+                      progetti, scambiare idee sull'ingegneria o discutere di
+                      nuove opportunità.
                     </p>
                   </div>
                 </div>

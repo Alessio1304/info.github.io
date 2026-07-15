@@ -1,4 +1,4 @@
-import { Instagram, Linkedin, ArrowUp } from "lucide-react";
+import { Instagram, Linkedin, Github, ArrowUp } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const Footer = () => {
@@ -40,18 +40,18 @@ const Footer = () => {
   };
 
   return (
-    <footer className="py-12 bg-primary text-primary-foreground relative">
+    <footer className="py-12 bg-blue-900 text-white relative">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
           <div className="flex flex-col items-center md:items-start">
             <h3 className="text-xl font-semibold mb-4">Alessio Sorrentino</h3>
-            <p className="text-primary-foreground/80 text-sm mb-6 text-center md:text-left"></p>
+            <p className="text-white/80 text-sm mb-6 text-center md:text-left"></p>
             <div className="flex space-x-4">
               <a
                 href="https://www.instagram.com/alessio_sorrentino_/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20 transition-all duration-300 transform hover:scale-110"
+                className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 transform hover:scale-110"
                 aria-label="Instagram"
               >
                 <Instagram className="h-5 w-5" />
@@ -60,10 +60,19 @@ const Footer = () => {
                 href="https://it.linkedin.com/in/alessio-sorrentino-005b43274"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20 transition-all duration-300 transform hover:scale-110"
+                className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 transform hover:scale-110"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="h-5 w-5" />
+              </a>
+              <a
+                href="https://github.com/Alessio1304"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 transform hover:scale-110"
+                aria-label="Github"
+              >
+                <Github className="h-5 w-5" />
               </a>
             </div>
           </div>
@@ -95,9 +104,9 @@ const Footer = () => {
           <div className="flex flex-col items-center md:items-end">
             <div className="mb-6 text-center md:text-right max-w-xs"></div>
 
-            <div className="w-20 h-1 bg-accent mb-4"></div>
+            <div className="w-20 h-1 bg-blue-400 mb-4"></div>
 
-            <p className="text-sm text-primary-foreground/70">
+            <p className="text-sm text-white/70">
               &copy; {currentYear} Alessio Sorrentino. Tutti i diritti
               riservati.
             </p>
@@ -108,14 +117,14 @@ const Footer = () => {
       {/* Scroll to top button */}
       <button
         onClick={scrollToTop}
-        className={`fixed right-6 bottom-6 p-3 rounded-full bg-primary shadow-lg z-50 transition-all duration-300 ${
+        className={`fixed right-6 bottom-6 p-3 rounded-full bg-blue-900 border border-white/20 shadow-lg z-50 transition-all duration-300 ${
           showScrollTop
             ? "opacity-100 translate-y-0"
             : "opacity-0 translate-y-10 pointer-events-none"
         }`}
         aria-label="Torna in cima"
       >
-        <ArrowUp className="h-5 w-5 text-primary-foreground" />
+        <ArrowUp className="h-5 w-5 text-white" />
       </button>
     </footer>
   );

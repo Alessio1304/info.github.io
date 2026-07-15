@@ -125,15 +125,29 @@ const TimelineItem = ({
   description,
 }: TimelineItemProps) => {
   return (
-    <div className="relative pl-8 pb-12 group">
-      <div className="absolute left-0 top-0 h-full border-l-2 border-dashed border-muted group-hover:border-primary transition-all duration-300"></div>
-      <div className="absolute left-[-8px] top-0 w-4 h-4 rounded-full bg-background border-2 border-muted group-hover:border-primary transition-all duration-300"></div>
-      <span className="text-sm font-medium text-muted-foreground mb-2 inline-block">
-        {year}
-      </span>
-      <h3 className="text-xl font-semibold mb-1">{title}</h3>
-      <p className="text-primary font-medium mb-2">{organization}</p>
-      <p className="text-muted-foreground">{description}</p>
+    <div className="relative pl-6 md:pl-8 pb-8 group">
+      {/* Linea statica, meno invadente */}
+      <div className="absolute left-0 top-6 h-full border-l-2 border-muted transition-colors duration-300"></div>
+
+      {/* Pallino che reagisce dolcemente al passaggio del mouse */}
+      <div className="absolute left-[-9px] top-10 w-4 h-4 rounded-full bg-background border-2 border-muted transition-all duration-300 group-hover:border-blue-900 group-hover:bg-blue-900/20 group-hover:scale-125 z-10"></div>
+
+      {/* Card con effetto hover */}
+      <div className="relative p-5 md:p-6 rounded-2xl transition-all duration-300 ease-out border border-transparent group-hover:bg-card group-hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] group-hover:border-blue-900/10 group-hover:-translate-y-1">
+        {/* Effetto luce sfumata in sottofondo */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none"></div>
+
+        <div className="relative z-10">
+          <span className="inline-block px-3 py-1 mb-3 text-xs font-bold tracking-wider text-blue-900 uppercase bg-blue-900/10 rounded-full">
+            {year}
+          </span>
+          <h3 className="text-xl font-bold mb-2 group-hover:text-blue-900 transition-colors duration-300">
+            {title}
+          </h3>
+          <p className="text-foreground/80 font-medium mb-3">{organization}</p>
+          <p className="text-muted-foreground leading-relaxed">{description}</p>
+        </div>
+      </div>
     </div>
   );
 };
@@ -147,7 +161,7 @@ const SkillItem = ({ name, description }: SkillItemProps) => {
   return (
     <div className="mb-6">
       <div className="flex items-center mb-2">
-        <h4 className="text-lg font-semibold text-primary mr-3">{name}</h4>
+        <h4 className="text-lg font-semibold text-blue-900 mr-3">{name}</h4>
         <div className="text-xs text-muted-foreground">
           Politecnico di Torino
         </div>
@@ -184,11 +198,15 @@ const Resume = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold mb-4">Curriculum</h2>
-          <div className="h-1 w-20 bg-primary mx-auto"></div>
+          <div className="h-1 w-20 bg-blue-900 mx-auto"></div>
         </div>
 
         <div className="flex justify-center mb-12">
-          <Button onClick={downloadCV} variant="outline" className="gap-2">
+          <Button
+            onClick={downloadCV}
+            variant="outline"
+            className="gap-2 border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white transition-colors"
+          >
             <FileDown className="h-4 w-4" />
             Scarica CV
           </Button>
@@ -198,7 +216,7 @@ const Resume = () => {
           {/* Formazione */}
           <div>
             <h3 className="text-2xl font-semibold mb-8 flex items-center">
-              <span className="bg-primary/10 text-primary p-2 rounded-md mr-3">
+              <span className="bg-blue-900/10 text-blue-900 p-2 rounded-md mr-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -252,7 +270,7 @@ const Resume = () => {
           {/* Esperienza */}
           <div>
             <h3 className="text-2xl font-semibold mb-8 flex items-center">
-              <span className="bg-primary/10 text-primary p-2 rounded-md mr-3">
+              <span className="bg-blue-900/10 text-blue-900 p-2 rounded-md mr-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -295,7 +313,7 @@ const Resume = () => {
         {/* Progetti (Nuova sezione a tutta larghezza) */}
         <div className="mt-20">
           <h3 className="text-2xl font-semibold mb-12 flex items-center justify-center">
-            <span className="bg-primary/10 text-primary p-2 rounded-md mr-3">
+            <span className="bg-blue-900/10 text-blue-900 p-2 rounded-md mr-3">
               <Code className="w-5 h-5" />
             </span>
             Progetti Sviluppati
@@ -340,7 +358,7 @@ const Resume = () => {
                 year="2026"
                 title="Distributed Formation Control of Heterogeneous Nonlinear Planar Robots via Feedback Linearization"
                 organization="Politecnico di Torino"
-                description="Il lavoro affronta la sfida del controllo distribuito per una squadra di tre robot planari nonlineari eterogenei, operanti come Veicoli Autonomi di Superficie (ASV). L'obiettivo primario è stato garantire il mantenimento di una rigorosa formazione triangolare durante l'inseguimento di una traiettoria spaziale. Per superare le differenze dinamiche tra i veicoli, è stata implementata un'architettura gerarchica: un anello interno di Feedback Linearization ha compensato le nonlinearità locali trasformando il sistema in modelli lineari a doppio integratore , supportato da un osservatore di Luenberger per la stima degli stati non misurabili. Su questo impianto virtuale sono stati progettati e confrontati due protocolli di controllo cooperativo ad alto livello: uno basato su State-Feedback (tramite equazione di Riccati) e uno basato su Loop-Shaping in frequenza. L'efficacia dell'architettura è stata validata tramite simulazioni MATLAB, dimostrando un'elevata stabilità e reiezione dei disturbi anche in scenari marini severi caratterizzati da raffiche di vento, rumore dei sensori e incertezze parametriche."
+                description="Il lavoro affronta la sfida del controllo distribuito per una squadra di tre robot planari nonlineari eterogenei, operanti come Veicoli Autonomi di Superficie (ASV). L'obiettivo primario è stato garantire il mantenimento di una rigorosa formazione triangolare durante l'inseguimento di una traiettoria spaziale. Per superare le differenze dinamiche tra i veicoli, è stata implementata un'architettura gerarchica: un anello interno di Feedback Linearization ha compensato le nonlinearità locali trasformando il sistema in modelli lineari a doppio integratore, supportato da un osservatore di Luenberger per la stima degli stati non misurabili. Su questo impianto virtuale sono stati progettati e confrontati due protocolli di controllo cooperativo ad alto livello: uno basato su State-Feedback (tramite equazione di Riccati) e uno basato su Loop-Shaping in frequenza. L'efficacia dell'architettura è stata validata tramite simulazioni MATLAB, dimostrando un'elevata stabilità e reiezione dei disturbi anche in scenari marini severi caratterizzati da raffiche di vento, rumore dei sensori e incertezze parametriche."
               />
               <TimelineItem
                 year="2026"
@@ -355,7 +373,7 @@ const Resume = () => {
         {/* Competenze */}
         <div className="mt-20">
           <h3 className="text-2xl font-semibold mb-12 flex items-center justify-center">
-            <span className="bg-primary/10 text-primary p-2 rounded-md mr-3">
+            <span className="bg-blue-900/10 text-blue-900 p-2 rounded-md mr-3">
               <Cpu className="w-5 h-5" />
             </span>
             Competenze Professionali

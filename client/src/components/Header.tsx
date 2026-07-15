@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Menu, X, FileDown, Linkedin, Instagram } from "lucide-react";
+import { Menu, X, FileDown, Linkedin, Instagram, Github } from "lucide-react";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -69,15 +69,17 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-3">
-            <Avatar className="h-10 w-10 border-2 border-primary shadow-md transition-all duration-300 hover:scale-110">
+            <Avatar className="h-10 w-10 border-2 border-blue-900 shadow-md transition-all duration-300 hover:scale-110">
               <AvatarImage
-                src="https://ui-avatars.com/api/?name=AS&color=ffffff&background=0f766e"
+                src="https://ui-avatars.com/api/?name=AS&color=ffffff&background=1e3a8a"
                 alt="Alessio Sorrentino"
               />
               <AvatarFallback>AS</AvatarFallback>
             </Avatar>
             <div>
-              <h1 className="font-semibold text-xl">Alessio Sorrentino</h1>
+              <h1 className="font-semibold text-xl text-foreground">
+                Alessio Sorrentino
+              </h1>
               <div className="flex items-center mt-1 space-x-2">
                 <a
                   href="https://www.instagram.com/alessio_sorrentino_/"
@@ -97,6 +99,15 @@ const Header = () => {
                 >
                   <Linkedin className="h-4 w-4" />
                 </a>
+                <a
+                  href="https://github.com/Alessio1304"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                  aria-label="GitHub"
+                >
+                  <Github className="h-4 w-4" />
+                </a>
               </div>
             </div>
           </div>
@@ -105,26 +116,26 @@ const Header = () => {
           <nav className="hidden md:flex items-center gap-8">
             <button
               onClick={() => scrollToSection("about")}
-              className="text-sm font-medium hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full"
+              className="text-sm font-medium hover:text-blue-900 transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-blue-900 after:transition-all hover:after:w-full"
             >
               Chi Sono
             </button>
             <button
               onClick={() => scrollToSection("resume")}
-              className="text-sm font-medium hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full"
+              className="text-sm font-medium hover:text-blue-900 transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-blue-900 after:transition-all hover:after:w-full"
             >
               Curriculum
             </button>
             <button
               onClick={() => scrollToSection("contact")}
-              className="text-sm font-medium hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full"
+              className="text-sm font-medium hover:text-blue-900 transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-blue-900 after:transition-all hover:after:w-full"
             >
               Contatti
             </button>
             <Button
               onClick={downloadCV}
               size="sm"
-              className="gap-2 shadow-sm transition-transform duration-300 hover:shadow-md hover:translate-y-[-2px]"
+              className="gap-2 shadow-sm bg-blue-900 hover:bg-blue-800 text-white transition-transform duration-300 hover:shadow-md hover:translate-y-[-2px]"
             >
               <FileDown className="h-4 w-4" /> CV
             </Button>
@@ -132,7 +143,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden focus:outline-none"
+            className="md:hidden focus:outline-none text-foreground"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -160,15 +171,15 @@ const Header = () => {
               {/* Header del menu mobile - replica l'header principale */}
               <div className="flex justify-between items-center py-5">
                 <div className="flex items-center gap-3">
-                  <Avatar className="h-10 w-10 border-2 border-primary shadow-md">
+                  <Avatar className="h-10 w-10 border-2 border-blue-900 shadow-md">
                     <AvatarImage
-                      src="https://ui-avatars.com/api/?name=AS&color=ffffff&background=0f766e"
+                      src="https://ui-avatars.com/api/?name=AS&color=ffffff&background=1e3a8a"
                       alt="Alessio Sorrentino"
                     />
                     <AvatarFallback>AS</AvatarFallback>
                   </Avatar>
                   <div>
-                    <h1 className="font-semibold text-xl">
+                    <h1 className="font-semibold text-xl text-foreground">
                       Alessio Sorrentino
                     </h1>
                   </div>
@@ -176,7 +187,7 @@ const Header = () => {
 
                 {/* Pulsante per chiudere */}
                 <button
-                  className="focus:outline-none"
+                  className="focus:outline-none text-foreground"
                   onClick={() => setIsMobileMenuOpen(false)}
                   aria-label="Chiudi menu"
                 >
@@ -191,26 +202,26 @@ const Header = () => {
                 <nav className="flex flex-col gap-4">
                   <button
                     onClick={() => scrollToSection("about")}
-                    className="text-sm font-medium py-3 hover:text-primary hover:pl-2 transition-all text-left"
+                    className="text-sm font-medium py-3 hover:text-blue-900 hover:pl-2 transition-all text-left"
                   >
                     Chi Sono
                   </button>
                   <button
                     onClick={() => scrollToSection("resume")}
-                    className="text-sm font-medium py-3 hover:text-primary hover:pl-2 transition-all text-left"
+                    className="text-sm font-medium py-3 hover:text-blue-900 hover:pl-2 transition-all text-left"
                   >
                     Curriculum
                   </button>
                   <button
                     onClick={() => scrollToSection("contact")}
-                    className="text-sm font-medium py-3 hover:text-primary hover:pl-2 transition-all text-left"
+                    className="text-sm font-medium py-3 hover:text-blue-900 hover:pl-2 transition-all text-left"
                   >
                     Contatti
                   </button>
                   <div className="flex gap-3 mt-4">
                     <Button
                       onClick={downloadCV}
-                      className="gap-2 flex-1"
+                      className="gap-2 flex-1 bg-blue-900 hover:bg-blue-800 text-white"
                       size="sm"
                     >
                       <FileDown className="h-4 w-4" /> CV
@@ -219,7 +230,7 @@ const Header = () => {
                       variant="outline"
                       size="icon"
                       asChild
-                      className="h-9 w-9"
+                      className="h-9 w-9 border-input hover:text-blue-900 hover:border-blue-900"
                     >
                       <a
                         href="https://www.instagram.com/alessio_sorrentino_/"
@@ -233,7 +244,7 @@ const Header = () => {
                       variant="outline"
                       size="icon"
                       asChild
-                      className="h-9 w-9"
+                      className="h-9 w-9 border-input hover:text-blue-900 hover:border-blue-900"
                     >
                       <a
                         href="https://it.linkedin.com/in/alessio-sorrentino-005b43274"
@@ -241,6 +252,20 @@ const Header = () => {
                         rel="noopener noreferrer"
                       >
                         <Linkedin className="h-4 w-4" />
+                      </a>
+                    </Button>
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      asChild
+                      className="h-9 w-9 border-input hover:text-blue-900 hover:border-blue-900"
+                    >
+                      <a
+                        href="https://github.com/Alessio1304"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Github className="h-4 w-4" />
                       </a>
                     </Button>
                   </div>
