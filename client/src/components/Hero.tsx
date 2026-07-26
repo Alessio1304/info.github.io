@@ -47,7 +47,7 @@ const Hero = () => {
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
               Ciao, sono{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-blue-700">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-blue-700 dark:from-blue-400 dark:to-blue-200">
                 Alessio Sorrentino
               </span>
             </h1>
@@ -63,7 +63,7 @@ const Hero = () => {
             <div className="space-x-4">
               <Button
                 onClick={() => scrollToSection("contact")}
-                className="bg-blue-900 hover:bg-blue-800 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:translate-y-[-2px]"
+                className="bg-blue-900 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-500 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:translate-y-[-2px]"
               >
                 Contattami
               </Button>
@@ -108,11 +108,10 @@ const Hero = () => {
             }`}
           >
             {/* 
-              Qui ho sostituito i border e i background con [#0A2540] 
-              per garantire un blu profondo e professionale, senza tracce di viola.
+              Integrazione della dark mode per i bordi e gli sfondi della foto
             */}
-            <div className="relative w-full h-full aspect-square rounded-full overflow-hidden border-4 border-[#0A2540]/20 p-2 shadow-xl hover:shadow-2xl transition-all duration-500 hover:border-[#0A2540]/50">
-              <div className="bg-gradient-to-br from-[#0A2540]/10 to-[#0A2540]/30 rounded-full w-full h-full flex items-center justify-center overflow-hidden">
+            <div className="relative w-full h-full aspect-square rounded-full overflow-hidden border-4 border-[#0A2540]/20 dark:border-blue-400/30 p-2 shadow-xl hover:shadow-2xl transition-all duration-500 hover:border-[#0A2540]/50 dark:hover:border-blue-400/60">
+              <div className="bg-gradient-to-br from-[#0A2540]/10 to-[#0A2540]/30 dark:from-blue-500/10 dark:to-blue-500/30 rounded-full w-full h-full flex items-center justify-center overflow-hidden">
                 <img
                   src="https://github.com/Alessio1304/Components/blob/main/IMG_9754.jpeg?raw=true"
                   alt="Alessio Sorrentino"
@@ -120,7 +119,7 @@ const Hero = () => {
                 />
               </div>
 
-              <div className="absolute -bottom-2 -right-2 bg-[#0A2540] text-white text-xs py-1 px-3 rounded-full shadow-lg">
+              <div className="absolute -bottom-2 -right-2 bg-[#0A2540] dark:bg-blue-600 text-white text-xs py-1 px-3 rounded-full shadow-lg">
                 Automation & Control
               </div>
             </div>
@@ -134,7 +133,7 @@ const Hero = () => {
         >
           <button
             onClick={scrollToAbout}
-            className="rounded-full p-3 text-blue-900 hover:bg-blue-900/10 transition-all duration-300 hover:shadow-md"
+            className="rounded-full p-3 text-blue-900 dark:text-blue-400 hover:bg-blue-900/10 dark:hover:bg-blue-400/20 transition-all duration-300 hover:shadow-md"
             aria-label="Scorri fino alla sezione Chi Sono"
           >
             <ArrowDown className="h-6 w-6 animate-bounce" />

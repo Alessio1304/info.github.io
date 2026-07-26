@@ -10,6 +10,7 @@ import Resume from "@/components/Resume";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import { useEffect } from "react";
+import { ThemeProvider } from "@/components/theme-provider"; // Aggiunto import del ThemeProvider
 
 // For GitHub Pages support
 import { useHashLocation } from "./lib/github-pages";
@@ -26,7 +27,7 @@ function App({ basename = "/" }: AppProps) {
       if (hash) {
         const element = document.querySelector(hash);
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
+          element.scrollIntoView({ behavior: "smooth" });
         }
       }
     };
@@ -35,30 +36,32 @@ function App({ basename = "/" }: AppProps) {
     handleHashChange();
 
     // Listen for changes
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
   }, []);
-  
+
   return (
     <QueryClientProvider client={queryClient}>
-      <Router hook={useHashLocation} base={basename}>
-        <div className="flex flex-col min-h-screen">
-          <Header />
-          <main>
-            <Route path="/">
-              <>
-                <Hero />
-                <About />
-                <Resume />
-                
-                <Contact />
-              </>
-            </Route>
-          </main>
-          <Footer />
-        </div>
-      </Router>
-      <Toaster />
+      {/* Avvolgiamo l'app nel ThemeProvider impostato su system */}
+      <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
+        <Router hook={useHashLocation} base={basename}>
+          <div className="flex flex-col min-h-screen">
+            <Header />
+            <main>
+              <Route path="/">
+                <>
+                  <Hero />
+                  <About />
+                  <Resume />
+                  <Contact />
+                </>
+              </Route>
+            </main>
+            <Footer />
+          </div>
+        </Router>
+        <Toaster />
+      </ThemeProvider>
     </QueryClientProvider>
   );
 }
