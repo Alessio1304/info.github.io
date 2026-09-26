@@ -20,6 +20,22 @@ const initialState: ThemeProviderState = {
 
 const ThemeProviderContext = createContext<ThemeProviderState>(initialState);
 
+/**
+ * Resolves the effective theme ("dark" | "light") from the current
+ * system preference when the user's choice is "system".
+ */
+function getSystemTheme(): "dark" | "light" {
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+}
+
+function applyThemeClass(theme: Theme) {
+  const root = window.document.documentElement;
+  root.classList.remove("light", "dark");
+  root.classList.add(theme === "system" ? getSystemTheme() : theme);
+}
+
 export function ThemeProvider({
   children,
   defaultTheme = "system",
@@ -30,29 +46,35 @@ export function ThemeProvider({
     () => (localStorage.getItem(storageKey) as Theme) || defaultTheme,
   );
 
+  // Apply the theme class whenever the user-selected theme changes
   useEffect(() => {
-    const root = window.document.documentElement;
-
-    root.classList.remove("light", "dark");
-
-    if (theme === "system") {
-      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
-        .matches
-        ? "dark"
-        : "light";
-
-      root.classList.add(systemTheme);
-      return;
-    }
-
-    root.classList.add(theme);
+    applyThemeClass(theme);
   }, [theme]);
+
+  // Listen for real-time OS theme changes so the site updates
+  // instantly when the user toggles light/dark mode on their device
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+    const handleChange = () => {
+      // Only react if the user chose "system" (i.e. follow OS)
+      if (
+        theme === "system" ||
+        !localStorage.getItem(storageKey)
+      ) {
+        applyThemeClass("system");
+      }
+    };
+
+    mediaQuery.addEventListener("change", handleChange);
+    return () => mediaQuery.removeEventListener("change", handleChange);
+  }, [theme, storageKey]);
 
   const value = {
     theme,
-    setTheme: (theme: Theme) => {
-      localStorage.setItem(storageKey, theme);
-      setTheme(theme);
+    setTheme: (newTheme: Theme) => {
+      localStorage.setItem(storageKey, newTheme);
+      setTheme(newTheme);
     },
   };
 

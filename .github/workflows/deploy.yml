@@ -57,10 +57,6 @@ jobs:
           mkdir -p github-pages
           cp -r dist/public/* github-pages/
           
-          # Update paths in index.html for GitHub Pages
-          sed -i 's|src="/assets/|src="assets/|g' github-pages/index.html
-          sed -i 's|href="/assets/|href="assets/|g' github-pages/index.html
-          
           # Create .nojekyll file
           touch github-pages/.nojekyll
           

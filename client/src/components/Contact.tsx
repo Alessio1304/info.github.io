@@ -28,6 +28,9 @@ import {
   Github,
 } from "lucide-react";
 
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { useTranslation } from "react-i18next";
+
 // --- Componente Helper per l'animazione allo scroll ---
 const RevealOnScroll = ({
   children,
@@ -38,42 +41,10 @@ const RevealOnScroll = ({
   delay?: number;
   className?: string;
 }) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(entry.target);
-        }
-      },
-      {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px",
-      },
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => {
-      if (ref.current) observer.unobserve(ref.current);
-    };
-  }, []);
-
   return (
-    <div
-      ref={ref}
-      style={{ transitionDelay: `${delay}ms` }}
-      className={`transition-all duration-700 ease-out ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-      } ${className}`}
-    >
+    <ScrollReveal delay={delay / 1000} className={className}>
       {children}
-    </div>
+    </ScrollReveal>
   );
 };
 // --------------------------------------------------------
@@ -90,6 +61,7 @@ const formSchema = z.object({
 type FormValues = z.infer<typeof formSchema>;
 
 const Contact = () => {
+  const { t } = useTranslation();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
@@ -114,16 +86,14 @@ const Contact = () => {
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
       toast({
-        title: "Messaggio inviato",
-        description:
-          "Grazie per il tuo messaggio. Ti risponderò al più presto!",
+        title: t("contact.form.successTitle"),
+        description: t("contact.form.successDesc"),
       });
       form.reset();
     } catch (error) {
       toast({
-        title: "Errore",
-        description:
-          "Invio del messaggio fallito. Per favore riprova più tardi.",
+        title: t("contact.form.errorTitle"),
+        description: t("contact.form.errorDesc"),
         variant: "destructive",
       });
     } finally {
@@ -136,12 +106,10 @@ const Contact = () => {
       <div className="container mx-auto px-4">
         <RevealOnScroll>
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4">Contattami</h2>
+            <h2 className="text-3xl font-bold mb-4">{t("contact.title")}</h2>
             <div className="h-1 w-20 bg-blue-900 dark:bg-blue-400 mx-auto rounded-full"></div>
             <p className="mt-6 text-muted-foreground max-w-xl mx-auto">
-              Sono sempre aperto a nuove sfide tecnologiche. Contattami per
-              discutere di opportunità professionali, collaborazioni su progetti
-              ingegneristici o per un confronto tecnico.
+              {t("contact.subtitle")}
             </p>
           </div>
         </RevealOnScroll>
@@ -154,7 +122,7 @@ const Contact = () => {
                 <CardContent className="p-6">
                   <RevealOnScroll delay={150}>
                     <h3 className="text-xl font-semibold mb-6">
-                      Informazioni di Contatto
+                      {t("contact.contactInfo")}
                     </h3>
                   </RevealOnScroll>
 
@@ -165,9 +133,9 @@ const Contact = () => {
                           <MapPin className="h-5 w-5" />
                         </div>
                         <div>
-                          <h4 className="text-base font-medium">Località</h4>
+                          <h4 className="text-base font-medium">{t("contact.location")}</h4>
                           <p className="text-muted-foreground">
-                            Torino & Roma, Italia
+                            Turin & Rome
                           </p>
                         </div>
                       </div>
@@ -186,27 +154,12 @@ const Contact = () => {
                         </div>
                       </div>
                     </RevealOnScroll>
-
-                    <RevealOnScroll delay={450}>
-                      <div className="flex items-start">
-                        <div className="bg-blue-900/10 dark:bg-blue-400/20 p-3 rounded-md text-blue-900 dark:text-blue-400 mr-4 transition-colors">
-                          <Phone className="h-5 w-5" />
-                        </div>
-                        <div>
-                          <h4 className="text-base font-medium">Telefono</h4>
-                          <p className="text-muted-foreground">
-                            {" "}
-                            +39 3278926223
-                          </p>
-                        </div>
-                      </div>
-                    </RevealOnScroll>
                   </div>
 
                   <RevealOnScroll delay={550}>
                     <div className="mt-8">
                       <h4 className="text-base font-medium mb-4">
-                        Seguimi sui Social
+                        {t("contact.social")}
                       </h4>
                       <div className="flex flex-wrap gap-3">
                         <a
@@ -262,9 +215,7 @@ const Contact = () => {
 
                       <div className="mt-6 p-4 bg-blue-900/5 dark:bg-blue-400/10 rounded-lg border border-blue-900/10 dark:border-blue-400/20 transition-colors">
                         <p className="text-sm text-muted-foreground">
-                          Connettiamoci. Seguimi sui social per esplorare i miei
-                          progetti, scambiare idee sull'ingegneria o discutere
-                          di nuove opportunità.
+                          {t("contact.socialText")}
                         </p>
                       </div>
                     </div>

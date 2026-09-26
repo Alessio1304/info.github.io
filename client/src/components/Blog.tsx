@@ -10,6 +10,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, Eye, MessageSquare, Tag } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 // --- Componente Helper per l'animazione allo scroll ---
 const RevealOnScroll = ({
@@ -73,6 +74,7 @@ interface BlogPostProps {
 }
 
 const BlogPost = ({
+
   title,
   excerpt,
   date,
@@ -82,6 +84,8 @@ const BlogPost = ({
   comments,
   views,
 }: BlogPostProps) => {
+  const { t } = useTranslation();
+
   return (
     <Card className="h-full flex flex-col overflow-hidden transition-all duration-500 hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:hover:shadow-[0_8px_30px_rgba(255,255,255,0.03)] hover:border-blue-900/30 dark:hover:border-blue-400/30 group bg-card">
       <div className="relative h-48 overflow-hidden shrink-0">
@@ -126,7 +130,7 @@ const BlogPost = ({
           size="sm"
           className="text-sm text-blue-900 hover:text-blue-800 hover:bg-blue-900/10 dark:text-blue-400 dark:hover:text-blue-300 dark:hover:bg-blue-400/10 transition-colors"
         >
-          Leggi l'articolo
+          {t("blog.readMore")}
         </Button>
         <div className="flex items-center gap-3 text-xs text-muted-foreground">
           <span className="flex items-center gap-1">
@@ -142,16 +146,14 @@ const BlogPost = ({
 };
 
 const Blog = () => {
-  // Dati simulati aggiornati con temi ingegneristici pertinenti al tuo profilo
+  const { t } = useTranslation();
   const blogPosts = [
     {
       id: 1,
-      title:
-        "Architetture distribuite in Rust: la mia esperienza con Georuggine",
-      excerpt:
-        "Come ho ingegnerizzato un sistema client/server full-duplex tramite WebSocket per tracciare flotte di veicoli con la massima efficienza.",
-      date: "15 Mag 2026",
-      readTime: "6 min",
+      title: t("blog.posts.rust.title"),
+      excerpt: t("blog.posts.rust.excerpt"),
+      date: t("blog.posts.rust.date"),
+      readTime: t("blog.posts.rust.readTime"),
       tags: ["Rust", "Sistemi Distribuiti"],
       imageUrl: "https://images.unsplash.com/photo-1555066931-4365d14bab8c",
       comments: 12,
@@ -159,12 +161,10 @@ const Blog = () => {
     },
     {
       id: 2,
-      title:
-        "Sicurezza predittiva HRC: integrare modelli LSTM in ambito industriale",
-      excerpt:
-        "Dalla rilevazione alla previsione: come le reti neurali possono anticipare le collisioni e rendere sicura la collaborazione uomo-robot.",
-      date: "28 Apr 2026",
-      readTime: "8 min",
+      title: t("blog.posts.hrc.title"),
+      excerpt: t("blog.posts.hrc.excerpt"),
+      date: t("blog.posts.hrc.date"),
+      readTime: t("blog.posts.hrc.readTime"),
       tags: ["Deep Learning", "Robotica"],
       imageUrl: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e",
       comments: 8,
@@ -172,11 +172,10 @@ const Blog = () => {
     },
     {
       id: 3,
-      title: "Introduzione al Feedback Linearization per veicoli autonomi",
-      excerpt:
-        "Un'analisi su come trasformare un sistema non lineare complesso in modelli lineari a doppio integratore per la gestione di ASV.",
-      date: "10 Mar 2026",
-      readTime: "7 min",
+      title: t("blog.posts.feedback.title"),
+      excerpt: t("blog.posts.feedback.excerpt"),
+      date: t("blog.posts.feedback.date"),
+      readTime: t("blog.posts.feedback.readTime"),
       tags: ["Controllo", "MATLAB"],
       imageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
       comments: 15,
@@ -184,11 +183,10 @@ const Blog = () => {
     },
     {
       id: 4,
-      title: "Smart Home IoT: Comunicazione MQTT e Backend Scalabile",
-      excerpt:
-        "Costruire un'infrastruttura domotica resiliente utilizzando sensori Arduino, server CherryPy e protocolli di messaggistica leggeri.",
-      date: "22 Gen 2026",
-      readTime: "5 min",
+      title: t("blog.posts.iot.title"),
+      excerpt: t("blog.posts.iot.excerpt"),
+      date: t("blog.posts.iot.date"),
+      readTime: t("blog.posts.iot.readTime"),
       tags: ["IoT", "Python"],
       imageUrl: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f",
       comments: 9,
@@ -196,11 +194,10 @@ const Blog = () => {
     },
     {
       id: 5,
-      title: "Sviluppo Embedded su ARM Cortex-M3: Tetris Hardware",
-      excerpt:
-        "Gestire ADC, interrupt hardware e risorse di memoria limitate programmando un Cortex-M3 in C puro per applicazioni real-time.",
-      date: "12 Nov 2025",
-      readTime: "9 min",
+      title: t("blog.posts.arm.title"),
+      excerpt: t("blog.posts.arm.excerpt"),
+      date: t("blog.posts.arm.date"),
+      readTime: t("blog.posts.arm.readTime"),
       tags: ["Embedded", "C"],
       imageUrl: "https://images.unsplash.com/photo-1518770660439-4636190af475",
       comments: 21,
@@ -219,12 +216,10 @@ const Blog = () => {
       <div className="container mx-auto px-4">
         <RevealOnScroll>
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4">I Miei Articoli</h2>
+            <h2 className="text-3xl font-bold mb-4">{t("blog.title")}</h2>
             <div className="h-1 w-20 bg-blue-900 dark:bg-blue-400 mx-auto rounded-full"></div>
             <p className="mt-6 text-muted-foreground max-w-2xl mx-auto">
-              Condivido appunti, case study e riflessioni sulle sfide tecniche
-              che affronto quotidianamente nel campo dell'automazione e dello
-              sviluppo software.
+              {t("blog.subtitle")}
             </p>
           </div>
         </RevealOnScroll>
@@ -259,7 +254,7 @@ const Blog = () => {
                 size="lg"
                 className="border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-400 dark:hover:text-gray-900 transition-colors"
               >
-                Carica altri articoli
+                {t("blog.loadMore")}
               </Button>
             </div>
           </RevealOnScroll>

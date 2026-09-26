@@ -1,7 +1,9 @@
 import { Instagram, Linkedin, Github, ArrowUp } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
   const [showScrollTop, setShowScrollTop] = useState(false);
 
@@ -78,25 +80,25 @@ const Footer = () => {
           </div>
 
           <div className="flex flex-col items-center">
-            <h4 className="text-lg font-medium mb-4">Navigazione</h4>
+            <h4 className="text-lg font-medium mb-4">{t("footer.nav")}</h4>
             <nav className="flex flex-col space-y-2 items-center">
               <button
                 onClick={() => scrollToSection("about")}
                 className="hover:underline dark:hover:text-blue-400 dark:text-gray-300 transition-all hover:translate-x-1 duration-300"
               >
-                Chi Sono
+                {t("header.about")}
               </button>
               <button
                 onClick={() => scrollToSection("resume")}
                 className="hover:underline dark:hover:text-blue-400 dark:text-gray-300 transition-all hover:translate-x-1 duration-300"
               >
-                Curriculum
+                {t("header.resume")}
               </button>
               <button
                 onClick={() => scrollToSection("contact")}
                 className="hover:underline dark:hover:text-blue-400 dark:text-gray-300 transition-all hover:translate-x-1 duration-300"
               >
-                Contatti
+                {t("header.contact")}
               </button>
             </nav>
           </div>
@@ -107,8 +109,7 @@ const Footer = () => {
             <div className="w-20 h-1 bg-blue-400 dark:bg-blue-500 mb-4 rounded-full"></div>
 
             <p className="text-sm text-white/70 dark:text-muted-foreground">
-              &copy; {currentYear} Alessio Sorrentino. Tutti i diritti
-              riservati.
+              &copy; {currentYear} Alessio Sorrentino. {t("footer.rights")}
             </p>
           </div>
         </div>
@@ -122,7 +123,7 @@ const Footer = () => {
             ? "opacity-100 translate-y-0"
             : "opacity-0 translate-y-10 pointer-events-none"
         }`}
-        aria-label="Torna in cima"
+        aria-label={t("footer.backToTop")}
       >
         <ArrowUp className="h-5 w-5" />
       </button>

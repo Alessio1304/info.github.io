@@ -189,4 +189,4 @@ function addToRemoveQueue(toastId: string) {
 }
 
 export { useToast, toast }
-export type { ToasterToast }
+export type { Toast, ToasterToast }

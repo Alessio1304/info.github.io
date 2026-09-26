@@ -1,8 +1,14 @@
+import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import App from "./App";
 import "./index.css";
+import App from "./App";
+import "./i18n";
 
-// This is important for GitHub Pages to understand the base path
-const basename = import.meta.env.BASE_URL || "/info.github.io/";
+// Reset any manually saved theme so it always follows the device preference
+localStorage.removeItem("vite-ui-theme");
 
-createRoot(document.getElementById("root")!).render(<App basename={basename} />);
+createRoot(document.getElementById("root")!).render(
+  <StrictMode>
+    <App />
+  </StrictMode>
+);
